@@ -353,10 +353,10 @@ local lightline_theme = {
 -- Note: These functions can be expensive to run, it is recommended you
 --       leave them commented out until you wish to work on lightline,
 --       or investigate the two-file approach in the other lightline example.
-local lightline_theme_filled = vim.fn['lightline#colorscheme#fill'](lightline_theme)
+-- local lightline_theme_filled = vim.fn['lightline#colorscheme#fill'](lightline_theme)
 
 -- define our theme for lightline to find
-vim.g['lightline#colorscheme#lightline_one_file#palette'] = lightline_theme_filled 
+-- vim.g['lightline#colorscheme#lightline_one_file#palette'] = lightline_theme_filled 
 
 -- Technically, that's all you have to do for your lightline theme to
 -- be applied but if you want real-time feedback while designing it, you must
