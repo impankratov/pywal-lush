@@ -139,7 +139,7 @@ local theme = lush(function()
     StatusLineNC  { bg = color9.darken(70), fg = color2.lighten(10)}, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
     TabLine       { StatusLineNC}, -- tab pages line, not active tab page label
     TabLineFill   { PmenuThumb }, -- tab pages line, where there are no labels
-    TabLineSel    { Search }, -- tab pages line, active tab page label
+    TabLineSel    { CursorIM }, -- tab pages line, active tab page label
     Title         { bg = color1.lighten(10),fg = color1.lighten(40) }, -- titles for output from ":set all", ":autocmd" etc.
     Visual        { bg = color9, fg = color1 }, -- Visual mode selection
     VisualNOS     { QuickFixLine}, -- Visual mode selection when vim is "Not Owning the Selection".
