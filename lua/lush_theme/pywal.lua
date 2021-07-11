@@ -153,17 +153,17 @@ local theme = lush(function()
     -- default,
     -- Uncomment and edit if you want more specific syntax highlighting.
 
-    Constant       { bg = 'NONE', fg = color8.darken(35) }, -- (preferred) any constant
+    Constant       { bg = 'NONE', fg = color8.darken(40) }, -- (preferred) any constant
     -- String         { }, --   a string constant: "this is a string"
     -- Character      { }, --  a character constant: 'c', '\n'
     -- Number         { }, --   a number constant: 234, 0xff
     -- Boolean        { }, --  a boolean constant: TRUE, false
     -- Float          { }, --    a floating point constant: 2.3e10
 
-     Identifier     { bg = 'NONE', fg = color5.darken(30) }, -- (preferred) any variable name
+     Identifier     { bg = 'NONE', fg = color5.lighten(50) }, -- (preferred) any variable name
      Function       { bg = 'NONE', fg = color1.lighten(30)}, -- function name (also: methods for classes)
 
-     Statement      { bg = 'NONE', fg = color4.lighten(40) }, -- (preferred) any statement
+     Statement      { bg = 'NONE', fg = color4.darken(10) }, -- (preferred) any statement
      Conditional    { bg = 'NONE', fg = color4.lighten(30) }, --  if, then, else, endif, switch, etc.
      Repeat         { bg = 'NONE', fg = color3.darken(20) }, --   for, do, while, etc.
      Label          { bg = 'NONE', fg = color2.lighten(30)}, --    case, default, etc.
@@ -171,18 +171,18 @@ local theme = lush(function()
     -- Keyword        { }, --  any other keyword
     -- Exception      { }, --  try, catch, throw
 
-     PreProc        { bg = 'NONE', fg = color7.darken(30)}, -- (preferred) generic Preprocessor
+     PreProc        { bg = 'NONE', fg = color7.darken(30)}, -- (preferred) generic Preprocessor, also Fugitive deleted text
     -- Include        { }, --  preprocessor #include
     -- Define         { }, --   preprocessor #define
     -- Macro          { }, --    same as Define
     -- PreCondit      { }, --  preprocessor #if, #else, #endif, etc.
 
-     Type           { bg = 'NONE', fg = color1.lighten(70), gui = "bold" }, -- (preferred) int, long, char, etc.
+     Type           { bg = 'NONE', fg = color1.lighten(20), gui = "bold" }, -- (preferred) int, long, char, etc.
     -- StorageClass   { }, -- static, register, volatile, etc.
     -- Structure      { }, --  struct, union, enum, etc.
     -- Typedef        { }, --  A typedef
 
-    Special        { bg = 'NONE', fg=color6.darken(50)}, -- (preferred) any special symbol
+    Special        { bg = 'NONE', fg=color6.darken(10)}, -- (preferred) any special symbol
     -- SpecialChar    { }, --  special character in a constant
     -- Tag            { }, --    you can use CTRL-] on this
     -- Delimiter      { }, --  character that needs attention
