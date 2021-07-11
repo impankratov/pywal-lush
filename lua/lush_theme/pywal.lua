@@ -116,15 +116,15 @@ local theme = lush(function()
     CursorLineNr  { bg = color12.lighten(35), fg = color1.darken(30) }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
     MatchParen    { bg = color1, fg = color1.lighten(50) }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
     ModeMsg       { bg = color1.lighten(10), fg = color6 }, -- 'showmode' message (e.g., "-- INSERT -- ")
-    MsgArea       { bg = color1.lighten(5), fg = color6.darken(15) },   -- Area for messages and cmdline
+    MsgArea       { bg = 'NONE', fg = color1.lighten(40) },   -- Area for messages and cmdline
     MsgSeparator  { bg = color1.darken(80), fg = color5.lighten(60) }, -- Separator for scrolled messages, `msgsep` flag of 'display'
     MoreMsg       { bg = color1, fg = color6.lighten(10), gui = "italic" }, -- |more-prompt|
     NonText       { bg = color1, fg = color2.darken(30), ctermbg=none }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
     Normal        { bg = 'NONE', fg = color1.lighten(40), ctermbg=none }, -- normal text
     NormalFloat   { bg = color4.darken(80), fg = color2.darken(40)}, -- Normal text in floating windows.
     -- NormalNC      { bg = color1, fg = color9.darken(70)}, -- normal text in non-current windows
-    Pmenu         { bg = color1.lighten(30), fg = color8 }, -- Popup menu: normal item.
-    PmenuSel      { bg = color5.lighten(30), fg = color12 }, -- Popup menu: selected item.
+    Pmenu         { bg = color4.darken(80), fg = color8 }, -- Popup menu: normal item.
+    PmenuSel      { bg = color5.lighten(20), fg = color12.darken(60) }, -- Popup menu: selected item.
     PmenuSbar     { bg = color2, fg = color1 }, -- Popup menu: scrollbar.
     PmenuThumb    { bg = color1, fg = color2 }, -- Popup menu: Thumb of the scrollbar.
     Question      { bg = color1, fg = color5.lighten(30)  }, -- |hit-enter| prompt and yes/no questions
