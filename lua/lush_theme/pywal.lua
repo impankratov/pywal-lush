@@ -106,7 +106,7 @@ local theme = lush(function()
     TermCursor    { bg = color6, fg = color1 }, -- cursor in a focused terminal
     TermCursorNC  { bg = color3, fg = color1 }, -- cursor in an unfocused terminal
     ErrorMsg      { bg = color3.lighten(50), fg = color1 }, -- error messages on the command line
-    VertSplit     { bg = color4.darken(70), fg = color2 }, -- the column separating vertically split windows
+    VertSplit     { bg = color4.darken(80), fg = color2 }, -- the column separating vertically split windows
     Folded        { bg = color1, fg = color3.darken(30)}, -- line used for closed folds
     FoldColumn    { bg = color2, fg = color3 }, -- 'foldcolumn'
     SignColumn    { bg = 'NONE', fg = color6 }, -- column where |signs| are displayed
