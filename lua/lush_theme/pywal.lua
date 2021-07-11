@@ -97,11 +97,11 @@ local theme = lush(function()
     CursorIM      { bg = color6, fg = color1 }, -- like Cursor, but used when in IME mode |CursorIM|
     CursorColumn  { bg = 'NONE', fg = color8 }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
      CursorLine   { bg = color2.darken(40), fg = color2.lighten(40) }, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
-    Directory     { bg = color1, fg = color6 }, -- directory names (and other special names in listings)
-    DiffAdd       { bg = color1, fg = color6 }, -- diff mode: Added line |diff.txt|
-    DiffChange    { bg = color1, fg = color11.lighten(30)}, -- diff mode: Changed line |diff.txt|
-    DiffDelete    { bg = color1, fg = color5.lighten(30)}, -- diff mode: Deleted line |diff.txt|
-    DiffText      { bg = color1, fg = color6.lighten(40)}, -- diff mode: Changed text within a changed line |diff.txt|
+    Directory     { bg = 'NONE', fg = color6 }, -- directory names (and other special names in listings)
+    DiffAdd       { bg = 'NONE', fg = color6 }, -- diff mode: Added line |diff.txt|
+    DiffChange    { bg = 'NONE', fg = color11.lighten(30)}, -- diff mode: Changed line |diff.txt|
+    DiffDelete    { bg = 'NONE', fg = color5.lighten(30)}, -- diff mode: Deleted line |diff.txt|
+    DiffText      { bg = 'NONE', fg = color6.lighten(40)}, -- diff mode: Changed text within a changed line |diff.txt|
     EndOfBuffer   { bg = 'NONE', fg = color2.darken(55) }, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
     TermCursor    { bg = color6, fg = color1 }, -- cursor in a focused terminal
     TermCursorNC  { bg = color3, fg = color1 }, -- cursor in an unfocused terminal
