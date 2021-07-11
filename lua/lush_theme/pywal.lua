@@ -89,30 +89,30 @@ local theme = lush(function()
     -- styling for that group (meaning they mostly get styled as Normal)
     -- or leave them commented to apply vims default colouring or linking.
 
-     Comment      { bg = color1, fg = color11.darken(70), gui = "italic"   }, -- any comment
-     ColorColumn  { bg = color1.darken(60) }, -- used for the columns set with 'colorcolumn'
-     Conceal      { bg = color1, fg = color2.darken(60) }, -- placeholder characters substituted for concealed text (see 'conceallevel')
+    Comment       { bg = 'NONE', fg = color11.darken(60), gui = "italic"   }, -- any comment
+    ColorColumn   { bg = color1.darken(60) }, -- used for the columns set with 'colorcolumn'
+    Conceal       { bg = color1, fg = color2.darken(60) }, -- placeholder characters substituted for concealed text (see 'conceallevel')
     Cursor        { bg = color1, fg = color9 }, -- character under the cursor
     lCursor       { bg = color3, fg = color10.darken(30) }, -- the character under the cursor when |language-mapping| is used (see 'guicursor')
     CursorIM      { bg = color6, fg = color1 }, -- like Cursor, but used when in IME mode |CursorIM|
-    CursorColumn  { bg = color1, fg = color8 }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
+    CursorColumn  { bg = 'NONE', fg = color8 }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
      CursorLine   { bg = color2.darken(40), fg = color2.lighten(40) }, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
     Directory     { bg = color1, fg = color6 }, -- directory names (and other special names in listings)
     DiffAdd       { bg = color1, fg = color6 }, -- diff mode: Added line |diff.txt|
     DiffChange    { bg = color1, fg = color11.lighten(30)}, -- diff mode: Changed line |diff.txt|
     DiffDelete    { bg = color1, fg = color5.lighten(30)}, -- diff mode: Deleted line |diff.txt|
     DiffText      { bg = color1, fg = color6.lighten(40)}, -- diff mode: Changed text within a changed line |diff.txt|
-      EndOfBuffer { bg = color1, fg = color2.darken(55) }, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
+    EndOfBuffer   { bg = 'NONE', fg = color2.darken(55) }, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
     TermCursor    { bg = color6, fg = color1 }, -- cursor in a focused terminal
     TermCursorNC  { bg = color3, fg = color1 }, -- cursor in an unfocused terminal
     ErrorMsg      { bg = color3.lighten(50), fg = color1 }, -- error messages on the command line
     VertSplit     { bg = color4, fg = color2 }, -- the column separating vertically split windows
     Folded        { bg = color1, fg = color3.darken(30)}, -- line used for closed folds
-    FoldColumn    { bg = color1, fg = color3 }, -- 'foldcolumn'
-    SignColumn    { bg = color1, fg = color6 }, -- column where |signs| are displayed
+    FoldColumn    { bg = color2, fg = color3 }, -- 'foldcolumn'
+    SignColumn    { bg = 'NONE', fg = color6 }, -- column where |signs| are displayed
     IncSearch     { bg = color8, fg = color1 }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
     Substitute    { bg = color7, fg = color1 }, -- |:substitute| replacement text highlighting
-    LineNr        { bg = color1, fg = color12 }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
+    LineNr        { bg = 'NONE', fg = color12 }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
     CursorLineNr  { bg = color12.lighten(35), fg = color1.darken(30) }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
     MatchParen    { bg = color1, fg = color1.lighten(50) }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
     ModeMsg       { bg = color1.lighten(10), fg = color6 }, -- 'showmode' message (e.g., "-- INSERT -- ")
@@ -120,7 +120,7 @@ local theme = lush(function()
     MsgSeparator  { bg = color1.darken(80), fg = color5.lighten(60) }, -- Separator for scrolled messages, `msgsep` flag of 'display'
     MoreMsg       { bg = color1, fg = color6.lighten(10), gui = "italic" }, -- |more-prompt|
     NonText       { bg = color1, fg = color2.darken(30), ctermbg=none }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
-    Normal        { bg = color1, fg = color1.lighten(40), ctermbg=none }, -- normal text
+    Normal        { bg = 'NONE', fg = color1.lighten(40), ctermbg=none }, -- normal text
     NormalFloat   { bg = color7, fg = color2.darken(40)}, -- Normal text in floating windows.
     -- NormalNC      { bg = color1, fg = color9.darken(70)}, -- normal text in non-current windows
     Pmenu         { bg = color1.lighten(30), fg = color8 }, -- Popup menu: normal item.
@@ -153,36 +153,36 @@ local theme = lush(function()
     -- default,
     -- Uncomment and edit if you want more specific syntax highlighting.
 
-    Constant       { bg = color1, fg = color8.darken(35) }, -- (preferred) any constant
+    Constant       { bg = 'NONE', fg = color8.darken(35) }, -- (preferred) any constant
     -- String         { }, --   a string constant: "this is a string"
     -- Character      { }, --  a character constant: 'c', '\n'
     -- Number         { }, --   a number constant: 234, 0xff
     -- Boolean        { }, --  a boolean constant: TRUE, false
     -- Float          { }, --    a floating point constant: 2.3e10
 
-     Identifier     { bg = color1, fg = color5.darken(30) }, -- (preferred) any variable name
-     Function       { bg = color1, fg = color1.lighten(30)}, -- function name (also: methods for classes)
+     Identifier     { bg = 'NONE', fg = color5.darken(30) }, -- (preferred) any variable name
+     Function       { bg = 'NONE', fg = color1.lighten(30)}, -- function name (also: methods for classes)
 
-     Statement      { bg = color1, fg = color4.lighten(40) }, -- (preferred) any statement
-     Conditional    { bg = color1, fg = color4.lighten(30) }, --  if, then, else, endif, switch, etc.
-     Repeat         { bg = color1, fg = color3.darken(20) }, --   for, do, while, etc.
-     Label          { bg = color1, fg = color2.lighten(30)}, --    case, default, etc.
+     Statement      { bg = 'NONE', fg = color4.lighten(40) }, -- (preferred) any statement
+     Conditional    { bg = 'NONE', fg = color4.lighten(30) }, --  if, then, else, endif, switch, etc.
+     Repeat         { bg = 'NONE', fg = color3.darken(20) }, --   for, do, while, etc.
+     Label          { bg = 'NONE', fg = color2.lighten(30)}, --    case, default, etc.
     -- Operator       { }, -- "sizeof", "+", "*", etc.
     -- Keyword        { }, --  any other keyword
     -- Exception      { }, --  try, catch, throw
 
-     PreProc        { bg = color1, fg = color7.darken(30)}, -- (preferred) generic Preprocessor
+     PreProc        { bg = 'NONE', fg = color7.darken(30)}, -- (preferred) generic Preprocessor
     -- Include        { }, --  preprocessor #include
     -- Define         { }, --   preprocessor #define
     -- Macro          { }, --    same as Define
     -- PreCondit      { }, --  preprocessor #if, #else, #endif, etc.
 
-     Type           { bg = color1, fg = color1.lighten(70), gui = "bold" }, -- (preferred) int, long, char, etc.
+     Type           { bg = 'NONE', fg = color1.lighten(70), gui = "bold" }, -- (preferred) int, long, char, etc.
     -- StorageClass   { }, -- static, register, volatile, etc.
     -- Structure      { }, --  struct, union, enum, etc.
     -- Typedef        { }, --  A typedef
 
-    Special        { bg = color1, fg=color6.darken(50)}, -- (preferred) any special symbol
+    Special        { bg = 'NONE', fg=color6.darken(50)}, -- (preferred) any special symbol
     -- SpecialChar    { }, --  special character in a constant
     -- Tag            { }, --    you can use CTRL-] on this
     -- Delimiter      { }, --  character that needs attention
