@@ -89,7 +89,7 @@ local theme = lush(function()
     -- styling for that group (meaning they mostly get styled as Normal)
     -- or leave them commented to apply vims default colouring or linking.
 
-    Comment       { bg = 'NONE', fg = color11.darken(60), gui = "italic"   }, -- any comment
+    Comment       { bg = 'NONE', fg = color1.lighten(20), gui = "italic" }, -- any comment
     ColorColumn   { bg = color1.darken(60) }, -- used for the columns set with 'colorcolumn'
     Conceal       { bg = color1, fg = color2.darken(30) }, -- placeholder characters substituted for concealed text (see 'conceallevel')
     Cursor        { bg = color1, fg = color9 }, -- character under the cursor
