@@ -114,36 +114,36 @@ local theme = lush(function()
     Substitute    { bg = color7, fg = color1 }, -- |:substitute| replacement text highlighting
     LineNr        { bg = 'NONE', fg = color12 }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
     CursorLineNr  { bg = color12.lighten(35), fg = color1.darken(30) }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
-    MatchParen    { bg = color1, fg = color1.lighten(50) }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
+    MatchParen    { bg = color1, fg = color15 }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
     ModeMsg       { bg = color1.lighten(10), fg = color6 }, -- 'showmode' message (e.g., "-- INSERT -- ")
-    MsgArea       { bg = 'NONE', fg = color1.lighten(40) },   -- Area for messages and cmdline
+    MsgArea       { bg = 'NONE', fg = color4 },   -- Area for messages and cmdline
     MsgSeparator  { bg = color1.darken(80), fg = color5.lighten(60) }, -- Separator for scrolled messages, `msgsep` flag of 'display'
     MoreMsg       { bg = color1, fg = color6.lighten(10), gui = "italic" }, -- |more-prompt|
     NonText       { bg = color1, fg = color2.darken(30), ctermbg=none }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
     Normal        { bg = 'NONE', fg = color8.darken(20), ctermbg=none }, -- normal text
     NormalFloat   { bg = color4.darken(80), fg = color2.darken(30)}, -- Normal text in floating windows.
     -- NormalNC      { bg = color1, fg = color9.darken(70)}, -- normal text in non-current windows
-    Pmenu         { bg = color4.darken(80), fg = color8 }, -- Popup menu: normal item.
-    PmenuSel      { bg = color5.lighten(20), fg = color12.darken(60) }, -- Popup menu: selected item.
-    PmenuSbar     { bg = color2, fg = color1 }, -- Popup menu: scrollbar.
-    PmenuThumb    { bg = color1, fg = color2 }, -- Popup menu: Thumb of the scrollbar.
+    Pmenu         { bg = color9, fg = color8 }, -- Popup menu: normal item.
+    PmenuSel      { bg = color10, fg = color1 }, -- Popup menu: selected item.
+    PmenuSbar     { bg = 'NONE', fg = color2 }, -- Popup menu: scrollbar.
+    PmenuThumb    { bg = color2, fg = color1 }, -- Popup menu: Thumb of the scrollbar.
     Question      { bg = color1, fg = color5.lighten(30)  }, -- |hit-enter| prompt and yes/no questions
     QuickFixLine  { bg = color3, fg = color9}, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
-    Search        { bg = color8.darken(10), fg = color2.lighten(10)}, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
+    Search        { bg = color8, fg = color1}, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
     SpecialKey    { bg = color1 , fg = color8.darken(40)  }, -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace|
     SpellBad      { bg = color1, fg = color3.darken(25), gui = "undercurl" }, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise. 
     SpellCap      { SpellBad}, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
     SpellLocal    { SpellBad}, -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
     SpellRare     { SpellBad}, -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
-    StatusLine    { bg = color1.lighten(60), fg = color6.darken(60)  }, -- status line of current window
+    StatusLine    { bg = color10, fg = color1 }, -- status line of current window
     StatusLineNC  { bg = color9.darken(70), fg = color2.lighten(10)}, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
     TabLine       { StatusLineNC}, -- tab pages line, not active tab page label
     TabLineFill   { PmenuThumb }, -- tab pages line, where there are no labels
     TabLineSel    { CursorIM }, -- tab pages line, active tab page label
     Title         { bg = 'NONE', fg = color1.lighten(40) }, -- titles for output from ":set all", ":autocmd" etc.
-    Visual        { bg = color9, fg = color1 }, -- Visual mode selection
+    Visual        { bg = color10, fg = color1 }, -- Visual mode selection
     VisualNOS     { QuickFixLine}, -- Visual mode selection when vim is "Not Owning the Selection".
-    WarningMsg    { bg = color1.lighten(15), fg = color6.lighten(70), gui="bold"  }, -- warning messages
+    WarningMsg    { bg = color9, fg = color6.lighten(70), gui="bold"  }, -- warning messages
     Whitespace    { NonText}, -- "nbsp", "space", "tab" and "trail" in 'listchars'
     WildMenu      { PmenuSel}, -- current match in 'wildmenu' completion
 
