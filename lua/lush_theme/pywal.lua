@@ -93,7 +93,7 @@ local theme = lush(function()
     ColorColumn   { bg = color1.darken(60) }, -- used for the columns set with 'colorcolumn'
     Conceal       { bg = color1, fg = color2.darken(60) }, -- placeholder characters substituted for concealed text (see 'conceallevel')
     Cursor        { bg = color1, fg = color9 }, -- character under the cursor
-    lCursor       { bg = color3, fg = color10.darken(30) }, -- the character under the cursor when |language-mapping| is used (see 'guicursor')
+    lCursor       { bg = color3, fg = color16 }, -- the character under the cursor when |language-mapping| is used (see 'guicursor')
     CursorIM      { bg = color6, fg = color1 }, -- like Cursor, but used when in IME mode |CursorIM|
     CursorColumn  { bg = 'NONE', fg = color8 }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
     CursorLine    { bg = color2.darken(40), fg = color2.lighten(40) }, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
