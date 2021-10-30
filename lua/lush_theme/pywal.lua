@@ -91,7 +91,7 @@ local theme = lush(function()
 
     Comment       { bg = 'NONE', fg = color11.darken(60), gui = "italic"   }, -- any comment
     ColorColumn   { bg = color1.darken(60) }, -- used for the columns set with 'colorcolumn'
-    Conceal       { bg = color1, fg = color2.darken(60) }, -- placeholder characters substituted for concealed text (see 'conceallevel')
+    Conceal       { bg = color1, fg = color2.darken(30) }, -- placeholder characters substituted for concealed text (see 'conceallevel')
     Cursor        { bg = color1, fg = color9 }, -- character under the cursor
     lCursor       { bg = color3, fg = color16 }, -- the character under the cursor when |language-mapping| is used (see 'guicursor')
     CursorIM      { bg = color6, fg = color1 }, -- like Cursor, but used when in IME mode |CursorIM|
@@ -108,7 +108,7 @@ local theme = lush(function()
     ErrorMsg      { bg = color3.lighten(50), fg = color1 }, -- error messages on the command line
     VertSplit     { bg = color4.darken(80), fg = color9 }, -- the column separating vertically split windows
     Folded        { bg = color1, fg = color3.darken(30)}, -- line used for closed folds
-    FoldColumn    { bg = color2, fg = color3 }, -- 'foldcolumn'
+    FoldColumn    { bg = color2, fg = color1 }, -- 'foldcolumn'
     SignColumn    { bg = 'NONE', fg = color6 }, -- column where |signs| are displayed
     IncSearch     { bg = color8, fg = color1 }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
     Substitute    { bg = color7, fg = color1 }, -- |:substitute| replacement text highlighting
