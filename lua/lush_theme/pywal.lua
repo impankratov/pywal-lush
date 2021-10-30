@@ -116,7 +116,7 @@ local theme = lush(function()
     CursorLineNr  { bg = color12.lighten(35), fg = color1.darken(30) }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
     MatchParen    { bg = color1, fg = color15 }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
     ModeMsg       { bg = color1.lighten(10), fg = color6 }, -- 'showmode' message (e.g., "-- INSERT -- ")
-    MsgArea       { bg = 'NONE', fg = color4 },   -- Area for messages and cmdline
+    MsgArea       { bg = 'NONE', fg = color12 },   -- Area for messages and cmdline
     MsgSeparator  { bg = color1.darken(80), fg = color5.lighten(60) }, -- Separator for scrolled messages, `msgsep` flag of 'display'
     MoreMsg       { bg = color1, fg = color6.lighten(10), gui = "italic" }, -- |more-prompt|
     NonText       { bg = color1, fg = color2.darken(30), ctermbg=none }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
