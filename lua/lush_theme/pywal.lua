@@ -135,11 +135,11 @@ local theme = lush(function()
     SpellCap      { SpellBad}, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
     SpellLocal    { SpellBad}, -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
     SpellRare     { SpellBad}, -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
-    StatusLine    { bg = color10, fg = color1 }, -- status line of current window
-    StatusLineNC  { bg = color9.darken(70), fg = color2.lighten(10)}, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
-    TabLine       { StatusLineNC}, -- tab pages line, not active tab page label
-    TabLineFill   { PmenuThumb }, -- tab pages line, where there are no labels
-    TabLineSel    { CursorIM }, -- tab pages line, active tab page label
+    StatusLine    { bg = color11, fg = color1 }, -- status line of current window
+    StatusLineNC  { bg = color1, fg = color5 }, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
+    TabLine       { StatusLineNC }, -- tab pages line, not active tab page label
+    TabLineFill   { bg = 'NONE' }, -- tab pages line, where there are no labels
+    TabLineSel    { StatusLine }, -- tab pages line, active tab page label
     Title         { bg = 'NONE', fg = color1.lighten(40) }, -- titles for output from ":set all", ":autocmd" etc.
     Visual        { bg = color10, fg = color1 }, -- Visual mode selection
     VisualNOS     { QuickFixLine}, -- Visual mode selection when vim is "Not Owning the Selection".
