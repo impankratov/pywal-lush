@@ -115,7 +115,7 @@ local theme = lush(function()
     LineNr        { bg = 'NONE', fg = color12 }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
     CursorLineNr  { bg = color12.lighten(35), fg = color1.darken(30) }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
     MatchParen    { bg = color1, fg = color15 }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
-    ModeMsg       { bg = color5, fg = color6 }, -- 'showmode' message (e.g., "-- INSERT -- ")
+    ModeMsg       { bg = color5, fg = color16 }, -- 'showmode' message (e.g., "-- INSERT -- ")
     MsgArea       { bg = 'NONE', fg = color12 },   -- Area for messages and cmdline
     MsgSeparator  { bg = color1.darken(80), fg = color5.lighten(60) }, -- Separator for scrolled messages, `msgsep` flag of 'display'
     MoreMsg       { bg = color1, fg = color6.lighten(10), gui = "italic" }, -- |more-prompt|
