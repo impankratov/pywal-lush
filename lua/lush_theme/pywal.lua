@@ -59,22 +59,22 @@ end
 local colors = getColors()
 
 local theme = lush(function()
-	local color1 = hsl(colors[1])
-	local color2 = hsl(colors[2])
-	local color3 = hsl(colors[3])
-	local color4 = hsl(colors[4])
-	local color5 = hsl(colors[5])
-	local color6 = hsl(colors[6])
-	local color7 = hsl(colors[7])
-	local color8 = hsl(colors[8])
-	local color9 = hsl(colors[9])
-	local color10 = hsl(colors[10])
-	local color11 = hsl(colors[11])
-	local color12 = hsl(colors[12])
-	local color13 = hsl(colors[13])
-	local color14 = hsl(colors[14])
-	local color15 = hsl(colors[15])
-	local color16 = hsl(colors[16])
+	local color0 = hsl(colors[1])
+	local color1 = hsl(colors[2])
+	local color2 = hsl(colors[3])
+	local color3 = hsl(colors[4])
+	local color4 = hsl(colors[5])
+	local color5 = hsl(colors[6])
+	local color6 = hsl(colors[7])
+	local color7 = hsl(colors[8])
+	local color8 = hsl(colors[9])
+	local color9 = hsl(colors[10])
+	local color10 = hsl(colors[11])
+	local color11 = hsl(colors[12])
+	local color12 = hsl(colors[13])
+	local color13 = hsl(colors[14])
+	local color14 = hsl(colors[15])
+	local color15 = hsl(colors[16])
 
 	return {
 		-- The following are all the Neovim default highlight groups from the docs
@@ -89,61 +89,61 @@ local theme = lush(function()
 		-- styling for that group (meaning they mostly get styled as Normal)
 		-- or leave them commented to apply vims default colouring or linking.
 
-		Comment({ bg = "NONE", fg = color1.lighten(20), gui = "italic" }), -- any comment
-		ColorColumn({ bg = color1.darken(60) }), -- used for the columns set with 'colorcolumn'
-		Conceal({ bg = color1, fg = color2.darken(30) }), -- placeholder characters substituted for concealed text (see 'conceallevel')
-		Cursor({ bg = color1, fg = color9 }), -- character under the cursor
-		lCursor({ bg = color3, fg = color16 }), -- the character under the cursor when |language-mapping| is used (see 'guicursor')
-		CursorIM({ bg = color6, fg = color1 }), -- like Cursor, but used when in IME mode |CursorIM|
-		CursorColumn({ bg = "NONE", fg = color8 }), -- Screen-column at the cursor, when 'cursorcolumn' is set.
-		CursorLine({ bg = color2.darken(40), fg = color2.lighten(40) }), -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
-		Directory({ bg = "NONE", fg = color6 }), -- directory names (and other special names in listings)
-		DiffAdd({ bg = "NONE", fg = color15 }), -- diff mode: Added line |diff.txt|
-		DiffChange({ bg = "NONE", fg = color11 }), -- diff mode: Changed line |diff.txt|
-		DiffDelete({ bg = "NONE", fg = color5 }), -- diff mode: Deleted line |diff.txt|
-		DiffText({ bg = "NONE", fg = color6.lighten(40) }), -- diff mode: Changed text within a changed line |diff.txt|
-		EndOfBuffer({ bg = "NONE", fg = color2.darken(55) }), -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
-		TermCursor({ bg = color6, fg = color1 }), -- cursor in a focused terminal
-		TermCursorNC({ bg = color3, fg = color1 }), -- cursor in an unfocused terminal
-		ErrorMsg({ bg = color3.lighten(50), fg = color1 }), -- error messages on the command line
-		VertSplit({ bg = color4.darken(80), fg = color9 }), -- the column separating vertically split windows
-		Folded({ bg = color1, fg = color3.darken(30) }), -- line used for closed folds
-		FoldColumn({ bg = color2, fg = color1 }), -- 'foldcolumn'
-		SignColumn({ bg = "NONE", fg = color6 }), -- column where |signs| are displayed
-		IncSearch({ bg = color8, fg = color1 }), -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
-		Substitute({ bg = color7, fg = color1 }), -- |:substitute| replacement text highlighting
-		LineNr({ bg = "NONE", fg = color12 }), -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
-		CursorLineNr({ bg = color12.lighten(35), fg = color1.darken(30) }), -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
-		MatchParen({ bg = color1, fg = color15 }), -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
-		ModeMsg({ bg = color5, fg = color16 }), -- 'showmode' message (e.g., "-- INSERT -- ")
-		MsgArea({ bg = "NONE", fg = color12 }), -- Area for messages and cmdline
-		MsgSeparator({ bg = color1.darken(80), fg = color5.lighten(60) }), -- Separator for scrolled messages, `msgsep` flag of 'display'
-		MoreMsg({ bg = color1, fg = color6.lighten(10), gui = "italic" }), -- |more-prompt|
-		NonText({ bg = color1, fg = color2.darken(30), ctermbg = none }), -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
-		Normal({ bg = "NONE", fg = color8.darken(20), ctermbg = none }), -- normal text
-		NormalFloat({ bg = color4.darken(80), fg = color2.darken(30) }), -- Normal text in floating windows.
-		-- NormalNC      { bg = color1, fg = color9.darken(70)}, -- normal text in non-current windows
-		Pmenu({ bg = color9, fg = color8 }), -- Popup menu: normal item.
-		PmenuSel({ bg = color10, fg = color1 }), -- Popup menu: selected item.
-		PmenuSbar({ bg = "NONE", fg = color2 }), -- Popup menu: scrollbar.
-		PmenuThumb({ bg = color2, fg = color1 }), -- Popup menu: Thumb of the scrollbar.
-		Question({ bg = color1, fg = color5.lighten(30) }), -- |hit-enter| prompt and yes/no questions
-		QuickFixLine({ bg = color3, fg = color9 }), -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
-		Search({ bg = color8, fg = color1 }), -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
-		SpecialKey({ bg = color1, fg = color8.darken(40) }), -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace|
-		SpellBad({ bg = color1, fg = color3.darken(25), gui = "undercurl" }), -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
+		Comment({ bg = "NONE", fg = color1.darken(10), gui = "italic" }), -- any comment
+		ColorColumn({ bg = color0.darken(60) }), -- used for the columns set with 'colorcolumn'
+		Conceal({ bg = color0, fg = color1.darken(30) }), -- placeholder characters substituted for concealed text (see 'conceallevel')
+		Cursor({ bg = color0, fg = color8 }), -- character under the cursor
+		lCursor({ bg = color2, fg = color15 }), -- the character under the cursor when |language-mapping| is used (see 'guicursor')
+		CursorIM({ bg = color5, fg = color0 }), -- like Cursor, but used when in IME mode |CursorIM|
+		CursorColumn({ bg = "NONE", fg = color7 }), -- Screen-column at the cursor, when 'cursorcolumn' is set.
+		CursorLine({ bg = color1.darken(40), fg = color1.lighten(40) }), -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
+		Directory({ bg = "NONE", fg = color5 }), -- directory names (and other special names in listings)
+		DiffAdd({ bg = "NONE", fg = color14 }), -- diff mode: Added line |diff.txt|
+		DiffChange({ bg = "NONE", fg = color10 }), -- diff mode: Changed line |diff.txt|
+		DiffDelete({ bg = "NONE", fg = color4 }), -- diff mode: Deleted line |diff.txt|
+		DiffText({ bg = "NONE", fg = color5.lighten(40) }), -- diff mode: Changed text within a changed line |diff.txt|
+		EndOfBuffer({ bg = "NONE", fg = color1.darken(55) }), -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
+		TermCursor({ bg = color5, fg = color0 }), -- cursor in a focused terminal
+		TermCursorNC({ bg = color2, fg = color0 }), -- cursor in an unfocused terminal
+		ErrorMsg({ bg = color2.lighten(50), fg = color0 }), -- error messages on the command line
+		VertSplit({ bg = color3.darken(80), fg = color8 }), -- the column separating vertically split windows
+		Folded({ bg = color0, fg = color2.darken(30) }), -- line used for closed folds
+		FoldColumn({ bg = color1, fg = color0 }), -- 'foldcolumn'
+		SignColumn({ bg = "NONE", fg = color5 }), -- column where |signs| are displayed
+		IncSearch({ bg = color7, fg = color0 }), -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
+		Substitute({ bg = color6, fg = color0 }), -- |:substitute| replacement text highlighting
+		LineNr({ bg = "NONE", fg = color11 }), -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
+		CursorLineNr({ bg = color11.lighten(35), fg = color0.darken(30) }), -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
+		MatchParen({ bg = color0, fg = color14 }), -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
+		ModeMsg({ bg = color4, fg = color15 }), -- 'showmode' message (e.g., "-- INSERT -- ")
+		MsgArea({ bg = "NONE", fg = color11 }), -- Area for messages and cmdline
+		MsgSeparator({ bg = color0.darken(80), fg = color4.lighten(60) }), -- Separator for scrolled messages, `msgsep` flag of 'display'
+		MoreMsg({ bg = color0, fg = color5.lighten(10), gui = "italic" }), -- |more-prompt|
+		NonText({ bg = color0, fg = color1.darken(30), ctermbg = none }), -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
+		Normal({ bg = "NONE", fg = color7.darken(20), ctermbg = none }), -- normal text
+		NormalFloat({ bg = color3.darken(80), fg = color1.darken(30) }), -- Normal text in floating windows.
+		-- NormalNC      { bg = color0, fg = color8.darken(70)}, -- normal text in non-current windows
+		Pmenu({ bg = color8, fg = color7 }), -- Popup menu: normal item.
+		PmenuSel({ bg = color9, fg = color0 }), -- Popup menu: selected item.
+		PmenuSbar({ bg = "NONE", fg = color1 }), -- Popup menu: scrollbar.
+		PmenuThumb({ bg = color1, fg = color0 }), -- Popup menu: Thumb of the scrollbar.
+		Question({ bg = color0, fg = color4.lighten(30) }), -- |hit-enter| prompt and yes/no questions
+		QuickFixLine({ bg = color2, fg = color8 }), -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
+		Search({ bg = color7, fg = color0 }), -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
+		SpecialKey({ bg = color0, fg = color7.darken(40) }), -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace|
+		SpellBad({ bg = color0, fg = color2.darken(25), gui = "undercurl" }), -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
 		SpellCap({ SpellBad }), -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
 		SpellLocal({ SpellBad }), -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
 		SpellRare({ SpellBad }), -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
-		StatusLine({ bg = color11, fg = color1 }), -- status line of current window
-		StatusLineNC({ bg = color1, fg = color5 }), -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
+		StatusLine({ bg = color10, fg = color0 }), -- status line of current window
+		StatusLineNC({ bg = color0, fg = color4 }), -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
 		TabLine({ StatusLineNC }), -- tab pages line, not active tab page label
 		TabLineFill({ bg = "NONE" }), -- tab pages line, where there are no labels
 		TabLineSel({ StatusLine }), -- tab pages line, active tab page label
-		Title({ bg = "NONE", fg = color1.lighten(40) }), -- titles for output from ":set all", ":autocmd" etc.
-		Visual({ bg = color10, fg = color1 }), -- Visual mode selection
+		Title({ bg = "NONE", fg = color0.lighten(40) }), -- titles for output from ":set all", ":autocmd" etc.
+		Visual({ bg = color9, fg = color0 }), -- Visual mode selection
 		VisualNOS({ QuickFixLine }), -- Visual mode selection when vim is "Not Owning the Selection".
-		WarningMsg({ bg = color9, fg = color6.lighten(70), gui = "bold" }), -- warning messages
+		WarningMsg({ bg = color8, fg = color5.lighten(70), gui = "bold" }), -- warning messages
 		Whitespace({ NonText }), -- "nbsp", "space", "tab" and "trail" in 'listchars'
 		WildMenu({ PmenuSel }), -- current match in 'wildmenu' completion
 
@@ -153,36 +153,36 @@ local theme = lush(function()
 		-- default,
 		-- Uncomment and edit if you want more specific syntax highlighting.
 
-		Constant({ bg = "NONE", fg = color8.darken(40) }), -- (preferred) any constant
+		Constant({ bg = "NONE", fg = color7.darken(40) }), -- (preferred) any constant
 		-- String         { }, --   a string constant: "this is a string"
 		-- Character      { }, --  a character constant: 'c', '\n'
 		-- Number         { }, --   a number constant: 234, 0xff
 		-- Boolean        { }, --  a boolean constant: TRUE, false
 		-- Float          { }, --    a floating point constant: 2.3e10
 
-		Identifier({ bg = "NONE", fg = color5.lighten(50) }), -- (preferred) any variable name
-		Function({ bg = "NONE", fg = color1.lighten(30) }), -- function name (also: methods for classes)
+		Identifier({ bg = "NONE", fg = color4.lighten(50) }), -- (preferred) any variable name
+		Function({ bg = "NONE", fg = color0.lighten(30) }), -- function name (also: methods for classes)
 
-		Statement({ bg = "NONE", fg = color4.darken(10) }), -- (preferred) any statement
-		Conditional({ bg = "NONE", fg = color4.lighten(30) }), --  if, then, else, endif, switch, etc.
-		Repeat({ bg = "NONE", fg = color3.darken(20) }), --   for, do, while, etc.
-		Label({ bg = "NONE", fg = color2.lighten(30) }), --    case, default, etc.
+		Statement({ bg = "NONE", fg = color3.darken(10) }), -- (preferred) any statement
+		Conditional({ bg = "NONE", fg = color3.lighten(30) }), --  if, then, else, endif, switch, etc.
+		Repeat({ bg = "NONE", fg = color2.darken(20) }), --   for, do, while, etc.
+		Label({ bg = "NONE", fg = color1.lighten(30) }), --    case, default, etc.
 		-- Operator       { }, -- "sizeof", "+", "*", etc.
 		-- Keyword        { }, --  any other keyword
 		-- Exception      { }, --  try, catch, throw
 
-		PreProc({ bg = "NONE", fg = color7.darken(30) }), -- (preferred) generic Preprocessor, also Fugitive deleted text
+		PreProc({ bg = "NONE", fg = color6.darken(30) }), -- (preferred) generic Preprocessor, also Fugitive deleted text
 		-- Include        { }, --  preprocessor #include
 		-- Define         { }, --   preprocessor #define
 		-- Macro          { }, --    same as Define
 		-- PreCondit      { }, --  preprocessor #if, #else, #endif, etc.
 
-		Type({ bg = "NONE", fg = color1.lighten(20), gui = "bold" }), -- (preferred) int, long, char, etc.
+		Type({ bg = "NONE", fg = color0.lighten(20), gui = "bold" }), -- (preferred) int, long, char, etc.
 		-- StorageClass   { }, -- static, register, volatile, etc.
 		-- Structure      { }, --  struct, union, enum, etc.
 		-- Typedef        { }, --  A typedef
 
-		Special({ bg = "NONE", fg = color6.darken(10) }), -- (preferred) any special symbol
+		Special({ bg = "NONE", fg = color5.darken(10) }), -- (preferred) any special symbol
 		-- SpecialChar    { }, --  special character in a constant
 		-- Tag            { }, --    you can use CTRL-] on this
 		-- Delimiter      { }, --  character that needs attention
@@ -196,7 +196,7 @@ local theme = lush(function()
 		-- ("Ignore", below, may be invisible...)
 		-- Ignore         { }, -- (preferred) left blank, hidden  |hl-Ignore|
 
-		Error({ bg = color6.darken(70), fg = color11.lighten(50), gui = "bold" }), -- (preferred) any erroneous construct
+		Error({ bg = color5.darken(70), fg = color10.lighten(50), gui = "bold" }), -- (preferred) any erroneous construct
 
 		Todo({ Title }), -- (preferred) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
 
