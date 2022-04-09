@@ -164,36 +164,37 @@ local theme = lush(function()
 		-- default,
 		-- Uncomment and edit if you want more specific syntax highlighting.
 
-		Constant({ bg = "NONE", fg = color7.darken(40) }), -- (preferred) any constant
+		Constant({ bg = "NONE", fg = color10 }), -- (preferred) any constant
 		-- String         { }, --   a string constant: "this is a string"
 		-- Character      { }, --  a character constant: 'c', '\n'
 		-- Number         { }, --   a number constant: 234, 0xff
 		-- Boolean        { }, --  a boolean constant: TRUE, false
 		-- Float          { }, --    a floating point constant: 2.3e10
+		Identifier({ bg = "NONE", fg = color7 }), -- (preferred) any variable name
+		Function({ bg = "NONE", fg = color12 }), -- function name (also: methods for classes)
 
-		Identifier({ bg = "NONE", fg = color4.lighten(50) }), -- (preferred) any variable name
-		Function({ bg = "NONE", fg = color0.lighten(30) }), -- function name (also: methods for classes)
+		Statement({ bg = "NONE", fg = color2 }), -- (preferred) any statement
 
-		Statement({ bg = "NONE", fg = color3.darken(10) }), -- (preferred) any statement
-		Conditional({ bg = "NONE", fg = color3.lighten(30) }), --  if, then, else, endif, switch, etc.
-		Repeat({ bg = "NONE", fg = color2.darken(20) }), --   for, do, while, etc.
-		Label({ bg = "NONE", fg = color1.lighten(30) }), --    case, default, etc.
+		Conditional({ bg = "NONE", fg = color4 }), --  if, then, else, endif, switch, etc.
+		Repeat({ bg = "NONE", fg = color4 }), --   for, do, while, etc.
+
+		Label({ bg = "NONE", fg = color7 }), --    case, default, etc.
 		-- Operator       { }, -- "sizeof", "+", "*", etc.
 		-- Keyword        { }, --  any other keyword
 		-- Exception      { }, --  try, catch, throw
 
-		PreProc({ bg = "NONE", fg = color6.darken(30) }), -- (preferred) generic Preprocessor, also Fugitive deleted text
+		PreProc({ bg = "NONE", fg = color6 }), -- (preferred) generic Preprocessor, also Fugitive deleted text
 		-- Include        { }, --  preprocessor #include
 		-- Define         { }, --   preprocessor #define
 		-- Macro          { }, --    same as Define
 		-- PreCondit      { }, --  preprocessor #if, #else, #endif, etc.
 
-		Type({ bg = "NONE", fg = color0.lighten(20), gui = "bold" }), -- (preferred) int, long, char, etc.
+		Type({ bg = "NONE", fg = color6, gui = "bold" }), -- (preferred) int, long, char, etc.
 		-- StorageClass   { }, -- static, register, volatile, etc.
 		-- Structure      { }, --  struct, union, enum, etc.
 		-- Typedef        { }, --  A typedef
 
-		Special({ bg = "NONE", fg = color5.darken(10) }), -- (preferred) any special symbol
+		Special({ bg = "NONE", fg = color13 }), -- (preferred) any special symbol
 		-- SpecialChar    { }, --  special character in a constant
 		-- Tag            { }, --    you can use CTRL-] on this
 		-- Delimiter      { }, --  character that needs attention
@@ -207,7 +208,7 @@ local theme = lush(function()
 		-- ("Ignore", below, may be invisible...)
 		-- Ignore         { }, -- (preferred) left blank, hidden  |hl-Ignore|
 
-		Error({ bg = color5.darken(70), fg = color10.lighten(50), gui = "bold" }), -- (preferred) any erroneous construct
+		Error({ bg = color8, fg = color9, gui = "bold" }), -- (preferred) any erroneous construct
 
 		Todo({ Title }), -- (preferred) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
 
