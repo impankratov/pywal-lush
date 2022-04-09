@@ -76,6 +76,17 @@ local theme = lush(function()
 	local color14 = hsl(colors[15])
 	local color15 = hsl(colors[16])
 
+	local diffAdd = hsl("#3fb950")
+	-- 156,30,15
+	local diffAddBg = hsl("#1b3229")
+
+	local diffDelete = hsl("#f85149")
+	-- 346,10,15
+	local diffDeleteBg = hsl("#2a2224")
+
+	local diffChange = hsl("#d29922")
+	local diffChangeBg = hsl("#322c1b")
+
 	return {
 		-- The following are all the Neovim default highlight groups from the docs
 		-- as of 0.5.0-nightly-446, to aid your theme creation. Your themes should
@@ -98,10 +109,10 @@ local theme = lush(function()
 		CursorColumn({ bg = "NONE", fg = color7 }), -- Screen-column at the cursor, when 'cursorcolumn' is set.
 		CursorLine({ bg = color1.darken(40), fg = color1.lighten(40) }), -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
 		Directory({ bg = "NONE", fg = color5 }), -- directory names (and other special names in listings)
-		DiffAdd({ bg = "NONE", fg = color14 }), -- diff mode: Added line |diff.txt|
-		DiffChange({ bg = "NONE", fg = color10 }), -- diff mode: Changed line |diff.txt|
-		DiffDelete({ bg = "NONE", fg = color4 }), -- diff mode: Deleted line |diff.txt|
-		DiffText({ bg = "NONE", fg = color5.lighten(40) }), -- diff mode: Changed text within a changed line |diff.txt|
+		DiffAdd({ bg = diffAddBg }), -- diff mode: Added line |diff.txt|
+		DiffChange({ bg = diffChangeBg }), -- diff mode: Changed line |diff.txt|
+		DiffDelete({ bg = diffDeleteBg }), -- diff mode: Deleted line |diff.txt|
+		DiffText({ bg = diffChange, fg = color0 }), -- diff mode: Changed text within a changed line |diff.txt|
 		EndOfBuffer({ bg = "NONE", fg = color1.darken(55) }), -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
 		TermCursor({ bg = color5, fg = color0 }), -- cursor in a focused terminal
 		TermCursorNC({ bg = color2, fg = color0 }), -- cursor in an unfocused terminal
