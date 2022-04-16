@@ -128,8 +128,8 @@ local theme = lush(function()
     -- NormalNC      { bg = color0, fg = color8.darken(70)}, -- normal text in non-current windows
     Pmenu({ bg = color8, fg = color7 }), -- Popup menu: normal item.
     PmenuSel({ bg = color9, fg = color0 }), -- Popup menu: selected item.
-    PmenuSbar({ bg = "NONE", fg = color1 }), -- Popup menu: scrollbar.
-    PmenuThumb({ bg = color1, fg = color0 }), -- Popup menu: Thumb of the scrollbar.
+    PmenuSbar({ fg = "NONE", bg = color0 }), -- Popup menu: scrollbar.
+    PmenuThumb({ bg = color1, fg = "NONE" }), -- Popup menu: Thumb of the scrollbar.
     Question({ bg = color0, fg = color4.lighten(30) }), -- |hit-enter| prompt and yes/no questions
     QuickFixLine({ bg = color2, fg = color8 }), -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
     Search({ bg = color7, fg = color0 }), -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
