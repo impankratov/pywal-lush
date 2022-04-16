@@ -314,6 +314,26 @@ local theme = lush(function()
     -- TSTypeBuiltin        { } , -- Built-in types: `i32` in Rust.
     -- TSVariable           { } , -- Variable names that don't fit into other categories.
     -- TSVariableBuiltin    { } , -- Variable names defined by the language: `this` or `self` in Javascript.
+
+    -- Telescope
+    -- https://github.com/nvim-telescope/telescope.nvim
+
+    -- TelescopeSelection      { }, -- guifg=#D79921 gui=bold " Selected item
+    -- TelescopeSelectionCaret { }, -- guifg=#CC241D          " Selection caret
+    -- TelescopeMultiSelection { }, -- guifg=#928374          " Multisections
+    -- TelescopeNormal         { }, -- guibg=#00000           " Floating windows created by telescope
+
+    -- Border highlight groups
+    TelescopeBorder { fg = color2 }, -- guifg=#ffffff
+    -- TelescopePromptBorder   { }, -- guifg=#ffffff
+    -- TelescopeResultsBorder  { }, -- guifg=#ffffff
+    -- TelescopePreviewBorder  { }, -- guifg=#ffffff
+
+    -- Highlight characters your in put matches
+    TelescopeMatching { bg = color10, fg = color0 }, -- guifg=blue
+
+    -- Color the prompt prefix
+    -- TelescopePromptPrefix   { }, -- guifg=red
   }
 end)
 
