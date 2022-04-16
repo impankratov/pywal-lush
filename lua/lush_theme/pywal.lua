@@ -117,7 +117,7 @@ local theme = lush(function()
 		TermCursor({ bg = color5, fg = color0 }), -- cursor in a focused terminal
 		TermCursorNC({ bg = color2, fg = color0 }), -- cursor in an unfocused terminal
 		ErrorMsg({ bg = color2.lighten(50), fg = color0 }), -- error messages on the command line
-		VertSplit({ bg = color3.darken(80), fg = color8 }), -- the column separating vertically split windows
+		VertSplit({ bg = "NONE", fg = color8 }), -- the column separating vertically split windows
 		Folded({ bg = color0, fg = color2.darken(30) }), -- line used for closed folds
 		FoldColumn({ bg = color1, fg = color0 }), -- 'foldcolumn'
 		SignColumn({ bg = "NONE", fg = color5 }), -- column where |signs| are displayed
