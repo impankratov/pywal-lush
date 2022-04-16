@@ -143,7 +143,7 @@ local theme = lush(function()
     TabLine({ StatusLineNC }), -- tab pages line, not active tab page label
     TabLineFill({ bg = "NONE" }), -- tab pages line, where there are no labels
     TabLineSel({ StatusLine }), -- tab pages line, active tab page label
-    Title({ bg = "NONE", fg = color0.lighten(40) }), -- titles for output from ":set all", ":autocmd" etc.
+    Title({ bg = "NONE", fg = color15 }), -- titles for output from ":set all", ":autocmd" etc.
     Visual({ bg = color9, fg = color0 }), -- Visual mode selection
     VisualNOS({ QuickFixLine }), -- Visual mode selection when vim is "Not Owning the Selection".
     WarningMsg({ bg = color8, fg = color5.lighten(70), gui = "bold" }), -- warning messages
