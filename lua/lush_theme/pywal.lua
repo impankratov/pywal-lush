@@ -45,11 +45,11 @@
 local lush = require('lush')
 local hsl = lush.hsl
 
-function getColors()
+local function getColors()
   local colorTable = {}
   local home = os.getenv('HOME')
   local pywal_colors = home .. '/.cache/wal/colors'
-  file = io.open(pywal_colors, 'r')
+  local file = io.open(pywal_colors, 'r')
   for line in file:lines() do
     table.insert(colorTable, line)
   end
