@@ -79,17 +79,6 @@ local theme = lush(function()
   local color14 = hsl(colors[15])
   local color15 = hsl(colors[16])
 
-  local diffAdd = hsl("#3fb950")
-  -- 156,30,15
-  local diffAddBg = hsl("#1b3229")
-
-  local diffDelete = hsl("#f85149")
-  -- 346,10,15
-  local diffDeleteBg = hsl("#2a2224")
-
-  local diffChange = hsl("#d29922")
-  local diffChangeBg = hsl("#322c1b")
-
   return {
     -- The following are all the Neovim default highlight groups from the docs
     -- as of 0.5.0-nightly-446, to aid your theme creation. Your themes should
@@ -112,10 +101,10 @@ local theme = lush(function()
     CursorColumn({ bg = "NONE", fg = color7 }), -- Screen-column at the cursor, when 'cursorcolumn' is set.
     CursorLine({ bg = color1.darken(40), fg = color1.lighten(40) }), -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
     Directory({ bg = "NONE", fg = color5 }), -- directory names (and other special names in listings)
-    DiffAdd({ bg = diffAddBg }), -- diff mode: Added line |diff.txt|
-    DiffChange({ bg = diffChangeBg }), -- diff mode: Changed line |diff.txt|
-    DiffDelete({ bg = diffDeleteBg }), -- diff mode: Deleted line |diff.txt|
-    DiffText({ bg = diffChange, fg = color0 }), -- diff mode: Changed text within a changed line |diff.txt|
+    DiffAdd({ bg = color6, fg = color15 }), -- diff mode: Added line |diff.txt|
+    DiffChange({ bg = color8, fg = color10 }), -- diff mode: Changed line |diff.txt|
+    DiffDelete({ bg = color0, fg = color8 }), -- diff mode: Deleted line |diff.txt|
+    DiffText({ DiffAdd }), -- diff mode: Changed text within a changed line |diff.txt|
     EndOfBuffer({ bg = "NONE", fg = color1.darken(55) }), -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
     TermCursor({ bg = color5, fg = color0 }), -- cursor in a focused terminal
     TermCursorNC({ bg = color2, fg = color0 }), -- cursor in an unfocused terminal
@@ -314,6 +303,27 @@ local theme = lush(function()
     -- TSTypeBuiltin        { } , -- Built-in types: `i32` in Rust.
     -- TSVariable           { } , -- Variable names that don't fit into other categories.
     -- TSVariableBuiltin    { } , -- Variable names defined by the language: `this` or `self` in Javascript.
+
+    -- e $VIMRUNTIME/syntax/diff.vim
+    -- changing these only to tweak vim-fugitive's :G status view
+
+    -- diffOldFile {}, -- diffFile
+    -- diffNewFile {}, -- diffFile
+    -- diffIndexLine {}, -- PreProc
+    -- diffFile {}, -- Type
+    -- diffOnly {}, -- Constant
+    -- diffIdentical {}, -- Constant
+    -- diffDiffer {}, -- Constant
+    -- diffBDiffer {}, -- Constant
+    -- diffIsA {}, -- Constant
+    -- diffNoEOL {}, -- Constant
+    -- diffCommon {}, -- Constant
+    diffRemoved { DiffDelete }, -- Special
+    -- diffChanged {}, -- PreProc
+    diffAdded { DiffAdd }, -- Identifier
+    -- diffLine {}, -- Statement
+    -- diffSubname {}, -- PreProc
+    -- diffComment {}, -- Comment
 
     -- Telescope
     -- https://github.com/nvim-telescope/telescope.nvim
