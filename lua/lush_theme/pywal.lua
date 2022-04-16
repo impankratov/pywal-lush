@@ -132,7 +132,7 @@ local theme = lush(function()
 		MoreMsg({ bg = color0, fg = color5.lighten(10), gui = "italic" }), -- |more-prompt|
 		NonText({ bg = color0, fg = color1.darken(30), ctermbg = none }), -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
 		Normal({ bg = "NONE", fg = color7.darken(20), ctermbg = none }), -- normal text
-		NormalFloat({ bg = color3.darken(80), fg = color1.darken(30) }), -- Normal text in floating windows.
+		NormalFloat({ bg = color8, fg = color7 }), -- Normal text in floating windows.
 		-- NormalNC      { bg = color0, fg = color8.darken(70)}, -- normal text in non-current windows
 		Pmenu({ bg = color8, fg = color7 }), -- Popup menu: normal item.
 		PmenuSel({ bg = color9, fg = color0 }), -- Popup menu: selected item.
