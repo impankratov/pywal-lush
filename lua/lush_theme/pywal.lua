@@ -99,7 +99,7 @@ local theme = lush(function()
     lCursor({ bg = color2, fg = color15 }), -- the character under the cursor when |language-mapping| is used (see 'guicursor')
     CursorIM({ bg = color5, fg = color0 }), -- like Cursor, but used when in IME mode |CursorIM|
     CursorColumn({ bg = "NONE", fg = color7 }), -- Screen-column at the cursor, when 'cursorcolumn' is set.
-    CursorLine({ bg = color1.darken(40), fg = color1.lighten(40) }), -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
+    CursorLine({}), -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
     Directory({ bg = "NONE", fg = color5 }), -- directory names (and other special names in listings)
     DiffAdd({ bg = color6, fg = color15 }), -- diff mode: Added line |diff.txt|
     DiffChange({ bg = color8, fg = color10 }), -- diff mode: Changed line |diff.txt|
@@ -116,7 +116,7 @@ local theme = lush(function()
     IncSearch({ bg = color7, fg = color0 }), -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
     Substitute({ bg = color6, fg = color0 }), -- |:substitute| replacement text highlighting
     LineNr({ bg = "NONE", fg = color3 }), -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
-    CursorLineNr({ bg = color11, fg = color0 }), -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
+    CursorLineNr({ bg = color8, fg = color7 }), -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
     MatchParen({ bg = color0, fg = color14 }), -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
     ModeMsg({ bg = color14, fg = color0 }), -- 'showmode' message (e.g., "-- INSERT -- ")
     MsgArea({ bg = "NONE", fg = color11 }), -- Area for messages and cmdline
