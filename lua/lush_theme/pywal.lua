@@ -147,7 +147,7 @@ local theme = lush(function()
     Visual({ bg = color9, fg = color0 }), -- Visual mode selection
     VisualNOS({ QuickFixLine }), -- Visual mode selection when vim is "Not Owning the Selection".
     WarningMsg({ bg = color8, fg = color5.lighten(70), gui = "bold" }), -- warning messages
-    Whitespace({ NonText }), -- "nbsp", "space", "tab" and "trail" in 'listchars'
+    Whitespace({ bg = "NONE", fg = color8, ctermbg = none }), -- "nbsp", "space", "tab" and "trail" in 'listchars'
     WildMenu({ PmenuSel }), -- current match in 'wildmenu' completion
 
     -- These groups are not listed as default vim groups,
