@@ -17,7 +17,7 @@
 -- for usage guides, see :h lush or :LushRunTutorial
 
 --
--- Note: Because this is lua file, vim will append your file to the runtime,
+-- Note: Because this is a lua file, vim will append it to the runtime,
 --       which means you can require(...) it in other lua code (this is useful),
 --       but you should also take care not to conflict with other libraries.
 --
@@ -61,7 +61,9 @@ local colors = getColors()
 -- LSP/Linters mistakenly show `undefined global` errors in the spec, they may
 -- support an annotation like the following. Consult your server documentation.
 ---@diagnostic disable: undefined-global
-local theme = lush(function()
+local theme = lush(function(injected_functions)
+  local sym = injected_functions.sym
+
   local color0 = hsl(colors[1])
   local color1 = hsl(colors[2])
   local color2 = hsl(colors[3])
@@ -80,19 +82,16 @@ local theme = lush(function()
   local color15 = hsl(colors[16])
 
   return {
-    -- The following are all the Neovim default highlight groups from the docs
-    -- as of 0.5.0-nightly-446, to aid your theme creation. Your themes should
-    -- probably style all of these at a bare minimum.
+    -- The following are the Neovim (as of 0.8.0-dev+100-g371dfb174) highlight
+    -- groups, mostly used for styling UI elements.
+    -- Comment them out and add your own properties to override the defaults.
+    -- An empty definition `{}` will clear all styling, leaving elements looking
+    -- like the 'Normal' group.
+    -- To be able to link to a group, it must already be defined, so you may have
+    -- to reorder items as you go.
     --
-    -- Referenced/linked groups must come before being referenced/lined,
-    -- so the order shown ((mostly) alphabetical) is likely
-    -- not the order you will end up with.
+    -- See :h highlight-groups
     --
-    -- You can uncomment these and leave them empty to disable any
-    -- styling for that group (meaning they mostly get styled as Normal)
-    -- or leave them commented to apply vims default colouring or linking.
-
-    Comment({ bg = "NONE", fg = color1.darken(10), gui = "italic" }), -- any comment
     ColorColumn({ bg = color0.darken(60) }), -- used for the columns set with 'colorcolumn'
     Conceal({ bg = color0, fg = color1.darken(30) }), -- placeholder characters substituted for concealed text (see 'conceallevel')
     Cursor({ bg = color0, fg = color8 }), -- character under the cursor
@@ -148,61 +147,59 @@ local theme = lush(function()
     VisualNOS({ QuickFixLine }), -- Visual mode selection when vim is "Not Owning the Selection".
     WarningMsg({ bg = color8, fg = color5.lighten(70), gui = "bold" }), -- warning messages
     Whitespace({ bg = "NONE", fg = color8, ctermbg = none }), -- "nbsp", "space", "tab" and "trail" in 'listchars'
+    -- Winseparator { }, -- Separator between window splits. Inherts from |hl-VertSplit| by default, which it will replace eventually.
     WildMenu({ PmenuSel }), -- current match in 'wildmenu' completion
 
-    -- These groups are not listed as default vim groups,
-    -- but they are defacto standard group names for syntax highlighting.
-    -- commented out groups should chain up to their "preferred" group by
-    -- default,
+    -- Common vim syntax groups used for all kinds of code and markup.
+    -- Commented-out groups should chain up to their preferred (*) group
+    -- by default.
+    --
+    -- See :h group-name
+    --
     -- Uncomment and edit if you want more specific syntax highlighting.
 
-    Constant({ bg = "NONE", fg = color10 }), -- (preferred) any constant
-    -- String         { }, --   a string constant: "this is a string"
-    -- Character      { }, --  a character constant: 'c', '\n'
-    -- Number         { }, --   a number constant: 234, 0xff
-    -- Boolean        { }, --  a boolean constant: TRUE, false
-    -- Float          { }, --    a floating point constant: 2.3e10
-    Identifier({ bg = "NONE", fg = color7 }), -- (preferred) any variable name
-    Function({ bg = "NONE", fg = color12 }), -- function name (also: methods for classes)
+    Comment({ bg = "NONE", fg = color1.darken(10), gui = "italic" }), -- Any comment
 
-    Statement({ bg = "NONE", fg = color2 }), -- (preferred) any statement
+    Constant({ bg = "NONE", fg = color10 }), -- (*) Any constant
+    -- String         { }, --   A string constant: "this is a string"
+    -- Character      { }, --   A character constant: 'c', '\n'
+    -- Number         { }, --   A number constant: 234, 0xff
+    -- Boolean        { }, --   A boolean constant: TRUE, false
+    -- Float          { }, --   A floating point constant: 2.3e10
 
-    Conditional({ bg = "NONE", fg = color4 }), --  if, then, else, endif, switch, etc.
+    Identifier({ bg = "NONE", fg = color7 }), -- (*) Any variable name
+    Function({ bg = "NONE", fg = color12 }), --   Function name (also: methods for classes)
+
+    Statement({ bg = "NONE", fg = color2 }), -- (*) Any statement
+    Conditional({ bg = "NONE", fg = color4 }), --   if, then, else, endif, switch, etc.
     Repeat({ bg = "NONE", fg = color4 }), --   for, do, while, etc.
-
-    Label({ bg = "NONE", fg = color7 }), --    case, default, etc.
+    Label({ bg = "NONE", fg = color7 }), --   case, default, etc.
     -- Operator       { }, -- "sizeof", "+", "*", etc.
     -- Keyword        { }, --  any other keyword
     -- Exception      { }, --  try, catch, throw
 
-    PreProc({ bg = "NONE", fg = color6 }), -- (preferred) generic Preprocessor, also Fugitive deleted text
-    -- Include        { }, --  preprocessor #include
-    -- Define         { }, --   preprocessor #define
-    -- Macro          { }, --    same as Define
-    -- PreCondit      { }, --  preprocessor #if, #else, #endif, etc.
+    PreProc({ bg = "NONE", fg = color6 }), -- (*) Generic Preprocessor
+    -- Include        { }, --   Preprocessor #include
+    -- Define         { }, --   Preprocessor #define
+    -- Macro          { }, --   Same as Define
+    -- PreCondit      { }, --   Preprocessor #if, #else, #endif, etc.
 
-    Type({ bg = "NONE", fg = color6, gui = "bold" }), -- (preferred) int, long, char, etc.
+    Type({ bg = "NONE", fg = color6, gui = "bold" }), -- (*) int, long, char, etc.
     -- StorageClass   { }, -- static, register, volatile, etc.
     -- Structure      { }, --  struct, union, enum, etc.
     -- Typedef        { }, --  A typedef
 
-    Special({ bg = "NONE", fg = color13 }), -- (preferred) any special symbol
-    -- SpecialChar    { }, --  special character in a constant
-    -- Tag            { }, --    you can use CTRL-] on this
-    -- Delimiter      { }, --  character that needs attention
-    -- SpecialComment { }, -- special things inside a comment
-    -- Debug          { }, --    debugging statements
+    Special({ bg = "NONE", fg = color13 }), -- (*) Any special symbol
+    -- SpecialChar    { }, --  Special character in a constant
+    -- Tag            { }, --   You can use CTRL-] on this
+    -- Delimiter      { }, --  Character that needs attention
+    -- SpecialComment { }, --   Special things inside a comment (e.g. '\n')
+    -- Debug          { }, --   Debugging statements
 
-    Underlined({ gui = "underline" }), -- (preferred) text that stands out, HTML links
-    Bold({ gui = "bold" }),
-    Italic({ gui = "italic" }),
-
-    -- ("Ignore", below, may be invisible...)
-    -- Ignore         { }, -- (preferred) left blank, hidden  |hl-Ignore|
-
-    Error({ bg = color8, fg = color9, gui = "bold" }), -- (preferred) any erroneous construct
-
-    Todo({ Title }), -- (preferred) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
+    Underlined({ gui = "underline" }), -- Text that stands out, HTML links
+    -- Ignore         { }, -- Left blank, hidden |hl-Ignore| (NOTE: May be invisible here in template)
+    Error({ bg = color8, fg = color9, gui = "bold" }), -- Any erroneous construct
+    Todo({ Title }), -- Anything that needs extra attention; mostly the keywords TODO FIXME and XXX
 
     -- These groups are for the native LSP client and diagnostic system. Some
     -- other LSP clients may use these groups, or use their own. Consult your
@@ -210,9 +207,9 @@ local theme = lush(function()
 
     -- See :h lsp-highlight, some groups may not be listed, submit a PR fix to lush-template!
     --
-    -- LspReferenceText            { } , -- used for highlighting "text" references
-    -- LspReferenceRead            { } , -- used for highlighting "read" references
-    -- LspReferenceWrite           { } , -- used for highlighting "write" references
+    -- LspReferenceText            { } , -- Used for highlighting "text" references
+    -- LspReferenceRead            { } , -- Used for highlighting "read" references
+    -- LspReferenceWrite           { } , -- Used for highlighting "write" references
     -- LspCodeLens                 { } , -- Used to color the virtual text of the codelens. See |nvim_buf_set_extmark()|.
     -- LspCodeLensSeparator        { } , -- Used to color the seperator between two or more code lens.
     -- LspSignatureActiveParameter { } , -- Used to highlight the active parameter in the signature help. See |vim.lsp.handlers.signature_help()|.
@@ -240,68 +237,71 @@ local theme = lush(function()
     -- DiagnosticSignInfo         { } , -- Used for "Info" signs in sign column.
     -- DiagnosticSignHint         { } , -- Used for "Hint" signs in sign column.
 
-    -- See :h nvim-treesitter-highlights, some groups may not be listed, submit a PR fix to lush-template!
+    -- Tree-Sitter syntax groups.
     --
-    -- TSAttribute          { } , -- Annotations that can be attached to the code to denote some kind of meta information. e.g. C++/Dart attributes.
-    -- TSBoolean            { } , -- Boolean literals: `True` and `False` in Python.
-    -- TSCharacter          { } , -- Character literals: `'a'` in C.
-    -- TSComment            { } , -- Line comments and block comments.
-    -- TSConditional        { } , -- Keywords related to conditionals: `if`, `when`, `cond`, etc.
-    -- TSConstant           { } , -- Constants identifiers. These might not be semantically constant. E.g. uppercase variables in Python.
-    -- TSConstBuiltin       { } , -- Built-in constant values: `nil` in Lua.
-    -- TSConstMacro         { } , -- Constants defined by macros: `NULL` in C.
-    -- TSConstructor        { } , -- Constructor calls and definitions: `{}` in Lua, and Java constructors.
-    -- TSError              { } , -- Syntax/parser errors. This might highlight large sections of code while the user is typing still incomplete code, use a sensible highlight.
-    -- TSException          { } , -- Exception related keywords: `try`, `except`, `finally` in Python.
-    -- TSField              { } , -- Object and struct fields.
-    -- TSFloat              { } , -- Floating-point number literals.
-    -- TSFunction           { } , -- Function calls and definitions.
-    -- TSFuncBuiltin        { } , -- Built-in functions: `print` in Lua.
-    -- TSFuncMacro          { } , -- Macro defined functions (calls and definitions): each `macro_rules` in Rust.
-    -- TSInclude            { } , -- File or module inclusion keywords: `#include` in C, `use` or `extern crate` in Rust.
-    -- TSKeyword            { } , -- Keywords that don't fit into other categories.
-    -- TSKeywordFunction    { } , -- Keywords used to define a function: `function` in Lua, `def` and `lambda` in Python.
-    -- TSKeywordOperator    { } , -- Unary and binary operators that are English words: `and`, `or` in Python; `sizeof` in C.
-    -- TSKeywordReturn      { } , -- Keywords like `return` and `yield`.
-    -- TSLabel              { } , -- GOTO labels: `label:` in C, and `::label::` in Lua.
-    -- TSMethod             { } , -- Method calls and definitions.
-    -- TSNamespace          { } , -- Identifiers referring to modules and namespaces.
-    -- TSNone               { } , -- No highlighting (sets all highlight arguments to `NONE`). this group is used to clear certain ranges, for example, string interpolations. Don't change the values of this highlight group.
-    -- TSNumber             { } , -- Numeric literals that don't fit into other categories.
-    -- TSOperator           { } , -- Binary or unary operators: `+`, and also `->` and `*` in C.
-    -- TSParameter          { } , -- Parameters of a function.
-    -- TSParameterReference { } , -- References to parameters of a function.
-    -- TSProperty           { } , -- Same as `TSField`.
-    -- TSPunctDelimiter     { } , -- Punctuation delimiters: Periods, commas, semicolons, etc.
-    -- TSPunctBracket       { } , -- Brackets, braces, parentheses, etc.
-    -- TSPunctSpecial       { } , -- Special punctuation that doesn't fit into the previous categories.
-    -- TSRepeat             { } , -- Keywords related to loops: `for`, `while`, etc.
-    -- TSString             { } , -- String literals.
-    -- TSStringRegex        { } , -- Regular expression literals.
-    -- TSStringEscape       { } , -- Escape characters within a string: `\n`, `\t`, etc.
-    -- TSStringSpecial      { } , -- Strings with special meaning that don't fit into the previous categories.
-    -- TSSymbol             { } , -- Identifiers referring to symbols or atoms.
-    -- TSTag                { } , -- Tags like HTML tag names.
-    -- TSTagAttribute       { } , -- HTML tag attributes.
-    -- TSTagDelimiter       { } , -- Tag delimiters like `<` `>` `/`.
-    -- TSText               { } , -- Non-structured text. Like text in a markup language.
-    -- TSStrong             { } , -- Text to be represented in bold.
-    -- TSEmphasis           { } , -- Text to be represented with emphasis.
-    -- TSUnderline          { } , -- Text to be represented with an underline.
-    -- TSStrike             { } , -- Strikethrough text.
-    -- TSTitle              { } , -- Text that is part of a title.
-    -- TSLiteral            { } , -- Literal or verbatim text.
-    -- TSURI                { } , -- URIs like hyperlinks or email addresses.
-    -- TSMath               { } , -- Math environments like LaTeX's `$ ... $`
-    -- TSTextReference      { } , -- Footnotes, text references, citations, etc.
-    -- TSEnvironment        { } , -- Text environments of markup languages.
-    -- TSEnvironmentName    { } , -- Text/string indicating the type of text environment. Like the name of a `\begin` block in LaTeX.
-    -- TSNote               { } , -- Text representation of an informational note.
-    -- TSWarning            { } , -- Text representation of a warning note.
-    -- TSDanger             { } , -- Text representation of a danger note.
-    -- TSType               { } , -- Type (and class) definitions and annotations.
-    -- TSTypeBuiltin        { } , -- Built-in types: `i32` in Rust.
-    -- TSVariable           { } , -- Variable names that don't fit into other categories.
+    -- See :h treesitter-highlight-groups, some groups may not be listed,
+    -- submit a PR fix to lush-template!
+    --
+    -- Tree-Sitter groups are defined with an "@" symbol, which must be
+    -- specially handled to be valid lua code, we do this via the special
+    -- sym function. The following are all valid ways to call the sym function,
+    -- for more details see https://www.lua.org/pil/5.html
+    --
+    -- sym("@text.literal")
+    -- sym('@text.literal')
+    -- sym"@text.literal"
+    -- sym'@text.literal'
+    --
+    -- For more information see https://github.com/rktjmp/lush.nvim/issues/109
+
+    -- sym"@text.literal"      { }, -- Comment
+    -- sym"@text.reference"    { }, -- Identifier
+    -- sym"@text.title"        { }, -- Title
+    -- sym"@text.uri"          { }, -- Underlined
+    -- sym"@text.underline"    { }, -- Underlined
+    -- sym"@text.todo"         { }, -- Todo
+    -- sym"@comment"           { }, -- Comment
+    -- sym"@punctuation"       { }, -- Delimiter
+    -- sym"@constant"          { }, -- Constant
+    -- sym"@constant.builtin"  { }, -- Special
+    -- sym"@constant.macro"    { }, -- Define
+    -- sym"@define"            { }, -- Define
+    -- sym"@macro"             { }, -- Macro
+    -- sym"@string"            { }, -- String
+    -- sym"@string.escape"     { }, -- SpecialChar
+    -- sym"@string.special"    { }, -- SpecialChar
+    -- sym"@character"         { }, -- Character
+    -- sym"@character.special" { }, -- SpecialChar
+    -- sym"@number"            { }, -- Number
+    -- sym"@boolean"           { }, -- Boolean
+    -- sym"@float"             { }, -- Float
+    -- sym"@function"          { }, -- Function
+    -- sym"@function.builtin"  { }, -- Special
+    -- sym"@function.macro"    { }, -- Macro
+    -- sym"@parameter"         { }, -- Identifier
+    -- sym"@method"            { }, -- Function
+    -- sym"@field"             { }, -- Identifier
+    -- sym"@property"          { }, -- Identifier
+    -- sym"@constructor"       { }, -- Special
+    -- sym"@conditional"       { }, -- Conditional
+    -- sym"@repeat"            { }, -- Repeat
+    -- sym"@label"             { }, -- Label
+    -- sym"@operator"          { }, -- Operator
+    -- sym"@keyword"           { }, -- Keyword
+    -- sym"@exception"         { }, -- Exception
+    -- sym"@variable"          { }, -- Identifier
+    -- sym"@type"              { }, -- Type
+    -- sym"@type.definition"   { }, -- Typedef
+    -- sym"@storageclass"      { }, -- StorageClass
+    -- sym"@structure"         { }, -- Structure
+    -- sym"@namespace"         { }, -- Identifier
+    -- sym"@include"           { }, -- Include
+    -- sym"@preproc"           { }, -- PreProc
+    -- sym"@debug"             { }, -- Debug
+    -- sym"@tag"               { }, -- Tag
+
+    -- Extras
+
     -- TSVariableBuiltin    { } , -- Variable names defined by the language: `this` or `self` in Javascript.
 
     -- e $VIMRUNTIME/syntax/diff.vim
@@ -344,6 +344,10 @@ local theme = lush(function()
 
     -- Color the prompt prefix
     -- TelescopePromptPrefix   { }, -- guifg=red
+
+    -- LeapMatch { bg = color7, gui = 'underline' },
+    -- LeapLabelPrimary {}
+
   }
 end)
 
@@ -440,6 +444,7 @@ local lightline_theme = {
 -- return our parsed theme for extension or use else where.
 --
 -- end)
+
 return theme
 
 -- vi:nowrap
