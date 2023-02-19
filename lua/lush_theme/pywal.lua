@@ -153,6 +153,9 @@ local theme = lush(function(injected_functions)
     -- Winseparator { }, -- Separator between window splits. Inherts from |hl-VertSplit| by default, which it will replace eventually.
     WildMenu({ PmenuSel }), -- current match in 'wildmenu' completion
 
+    FloatTitle({ bg = "NONE", fg = color7 }), -- nvim.dressing rename pop-up title https://github.com/stevearc/dressing.nvim/issues/42
+    FloatBorder({ fg = color2 }), -- nvim.dressing rename pop-up border
+
     -- Common vim syntax groups used for all kinds of code and markup.
     -- Commented-out groups should chain up to their preferred (*) group
     -- by default.
@@ -337,7 +340,7 @@ local theme = lush(function(injected_functions)
     -- TelescopeNormal         { }, -- guibg=#00000           " Floating windows created by telescope
 
     -- Border highlight groups
-    TelescopeBorder { fg = color2 }, -- guifg=#ffffff
+    TelescopeBorder { FloatBorder }, -- guifg=#ffffff
     -- TelescopePromptBorder   { }, -- guifg=#ffffff
     -- TelescopeResultsBorder  { }, -- guifg=#ffffff
     -- TelescopePreviewBorder  { }, -- guifg=#ffffff
