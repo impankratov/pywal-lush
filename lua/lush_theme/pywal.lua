@@ -126,7 +126,7 @@ local theme = lush(function(injected_functions)
     MoreMsg { bg = color0, fg = color5.lighten(10), gui = "italic" },  -- |more-prompt|
     NonText { bg = color0, fg = color1.darken(30), ctermbg = none },   -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
     Normal { bg = "NONE", fg = color7, ctermbg = none },               -- normal text
-    NormalFloat { bg = color8, fg = color7 },                          -- Normal text in floating windows.
+    NormalFloat { bg = "NONE", fg = color7 },                          -- Normal text in floating windows.
     -- NormalNC      { bg = color0, fg = color8.darken(70)}, -- normal text in non-current windows
     Pmenu { bg = color8, fg = color7 },                                -- Popup menu: normal item.
     PmenuSel { bg = color9, fg = color0 },                             -- Popup menu: selected item.
@@ -153,8 +153,8 @@ local theme = lush(function(injected_functions)
     -- Winseparator { }, -- Separator between window splits. Inherts from |hl-VertSplit| by default, which it will replace eventually.
     WildMenu { PmenuSel },                                             -- current match in 'wildmenu' completion
 
-    FloatTitle { bg = "NONE", fg = color7 },                           -- nvim.dressing rename pop-up title https://github.com/stevearc/dressing.nvim/issues/42
-    FloatBorder { fg = color2 },                                       -- nvim.dressing rename pop-up border
+    FloatTitle { bg = "NONE", fg = color15 },                          -- nvim.dressing rename pop-up title https://github.com/stevearc/dressing.nvim/issues/42
+    FloatBorder { fg = color9 },                                       -- nvim.dressing rename pop-up border
 
     -- Common vim syntax groups used for all kinds of code and markup.
     -- Commented-out groups should chain up to their preferred (*) group
