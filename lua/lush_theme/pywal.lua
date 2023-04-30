@@ -153,8 +153,8 @@ local theme = lush(function(injected_functions)
     -- Winseparator { }, -- Separator between window splits. Inherts from |hl-VertSplit| by default, which it will replace eventually.
     WildMenu { PmenuSel },                                             -- current match in 'wildmenu' completion
 
-    FloatTitle { bg = "NONE", fg = color15 },                          -- nvim.dressing rename pop-up title https://github.com/stevearc/dressing.nvim/issues/42
-    FloatBorder { fg = color9 },                                       -- nvim.dressing rename pop-up border
+    FloatTitle { bg = "NONE", fg = color15, gui = "bold" },                          -- nvim.dressing rename pop-up title https://github.com/stevearc/dressing.nvim/issues/42
+    FloatBorder { fg = color1 },                                       -- nvim.dressing rename pop-up border
 
     -- Common vim syntax groups used for all kinds of code and markup.
     -- Commented-out groups should chain up to their preferred (*) group
@@ -334,6 +334,8 @@ local theme = lush(function(injected_functions)
     -- Telescope
     -- https://github.com/nvim-telescope/telescope.nvim
 
+    TelescopeTitle { FloatTitle },
+
     -- TelescopeSelection      { }, -- guifg=#D79921 gui=bold " Selected item
     -- TelescopeSelectionCaret { }, -- guifg=#CC241D          " Selection caret
     -- TelescopeMultiSelection { }, -- guifg=#928374          " Multisections
@@ -349,7 +351,8 @@ local theme = lush(function(injected_functions)
     TelescopeMatching { bg = color10, fg = color0 }, -- guifg=blue
 
     -- Color the prompt prefix
-    -- TelescopePromptPrefix   { }, -- guifg=red
+    TelescopePromptPrefix { fg = color14 },  -- guifg=red
+    TelescopePromptCounter { bg = "NONE", fg = color3 }, -- guifg=#ffffff
 
     -- LeapMatch { bg = color7, gui = 'underline' },
     -- LeapLabelPrimary {}
