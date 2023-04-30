@@ -358,6 +358,10 @@ local theme = lush(function(injected_functions)
     TreesitterContextLineNumber { bg = color8, fg = color1 },
     TreesitterContextBottom { fg = color1, gui = "underline" },
 
+    GitSignsAdd { DiffAdd, bg = "NONE" },
+    GitSignsChange { DiffChange, bg = "NONE" },
+    GitSignsDelete { DiffDelete, bg = "NONE" },
+
     -- LeapMatch { bg = color7, gui = 'underline' },
     -- LeapLabelPrimary {}
 
