@@ -354,6 +354,10 @@ local theme = lush(function(injected_functions)
     TelescopePromptPrefix { fg = color14 },  -- guifg=red
     TelescopePromptCounter { bg = "NONE", fg = color3 }, -- guifg=#ffffff
 
+    TreesitterContext { bg = color8, fg = color7 },
+    TreesitterContextLineNumber { bg = color8, fg = color1 },
+    TreesitterContextBottom { fg = color1, gui = "underline" },
+
     -- LeapMatch { bg = color7, gui = 'underline' },
     -- LeapLabelPrimary {}
 
