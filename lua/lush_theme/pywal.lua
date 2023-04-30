@@ -95,7 +95,7 @@ local theme = lush(function(injected_functions)
     --
     -- See :h highlight-groups
     --
-    ColorColumn { bg = color0.darken(60) },                            -- used for the columns set with 'colorcolumn'
+    ColorColumn { bg = color0 },                                       -- used for the columns set with 'colorcolumn'
     Conceal { bg = color0, fg = color1.darken(30) },                   -- placeholder characters substituted for concealed text (see 'conceallevel')
     Cursor { bg = color0, fg = color8 },                               -- character under the cursor
     lCursor { bg = color2, fg = color15 },                             -- the character under the cursor when |language-mapping| is used (see 'guicursor')
@@ -122,7 +122,7 @@ local theme = lush(function(injected_functions)
     MatchParen { bg = "NONE", fg = color14, gui = "bold" },            -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
     ModeMsg { bg = color14, fg = color0 },                             -- 'showmode' message (e.g., "-- INSERT -- ")
     MsgArea { bg = "NONE", fg = color14 },                             -- Area for messages and cmdline
-    MsgSeparator { bg = color0.darken(80), fg = color7 },              -- Separator for scrolled messages, `msgsep` flag of 'display'
+    MsgSeparator { bg = color0, fg = color7 },                         -- Separator for scrolled messages, `msgsep` flag of 'display'
     MoreMsg { bg = color0, fg = color6, gui = "italic" },              -- |more-prompt|
     NonText { bg = color0, fg = color1.darken(30), ctermbg = none },   -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
     Normal { bg = "NONE", fg = color7, ctermbg = none },               -- normal text
