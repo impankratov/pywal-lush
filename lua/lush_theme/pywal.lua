@@ -121,9 +121,9 @@ local theme = lush(function(injected_functions)
     CursorLineNr { bg = color8, fg = color7 },                         -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
     MatchParen { bg = "NONE", fg = color14, gui = "bold" },            -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
     ModeMsg { bg = color14, fg = color0 },                             -- 'showmode' message (e.g., "-- INSERT -- ")
-    MsgArea { bg = "NONE", fg = color11 },                             -- Area for messages and cmdline
+    MsgArea { bg = "NONE", fg = color14 },                             -- Area for messages and cmdline
     MsgSeparator { bg = color0.darken(80), fg = color7 },              -- Separator for scrolled messages, `msgsep` flag of 'display'
-    MoreMsg { bg = color0, fg = color5.lighten(10), gui = "italic" },  -- |more-prompt|
+    MoreMsg { bg = color0, fg = color6, gui = "italic" },              -- |more-prompt|
     NonText { bg = color0, fg = color1.darken(30), ctermbg = none },   -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
     Normal { bg = "NONE", fg = color7, ctermbg = none },               -- normal text
     NormalFloat { bg = "NONE", fg = color7 },                          -- Normal text in floating windows.
@@ -134,7 +134,7 @@ local theme = lush(function(injected_functions)
     PmenuThumb { bg = color1, fg = "NONE" },                           -- Popup menu: Thumb of the scrollbar.
     Question { bg = color0, fg = color4.lighten(30) },                 -- |hit-enter| prompt and yes/no questions
     QuickFixLine { bg = color2, fg = color8 },                         -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
-    Search { bg = color7, fg = color0 },                               -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
+    Search { bg = color14, fg = color0 },                              -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
     SpecialKey { bg = color0, fg = color7.darken(40) },                -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace|
     SpellBad { bg = "NONE", fg = "NONE", gui = "undercurl" },          -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
     SpellCap { SpellBad },                                             -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
@@ -348,7 +348,7 @@ local theme = lush(function(injected_functions)
     -- TelescopePreviewBorder  { }, -- guifg=#ffffff
 
     -- Highlight characters your in put matches
-    TelescopeMatching { bg = color10, fg = color0 }, -- guifg=blue
+    TelescopeMatching { bg = color14, fg = color0 }, -- guifg=blue
 
     -- Color the prompt prefix
     TelescopePromptPrefix { fg = color14 },  -- guifg=red
