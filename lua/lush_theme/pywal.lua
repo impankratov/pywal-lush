@@ -119,7 +119,7 @@ local theme = lush(function(injected_functions)
     Substitute { bg = color6, fg = color0 },                           -- |:substitute| replacement text highlighting
     LineNr { bg = "NONE", fg = color3 },                               -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
     CursorLineNr { bg = color8, fg = color7 },                         -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
-    MatchParen { bg = color0, fg = color14, gui = "bold" },            -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
+    MatchParen { bg = "NONE", fg = color14, gui = "bold" },            -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
     ModeMsg { bg = color14, fg = color0 },                             -- 'showmode' message (e.g., "-- INSERT -- ")
     MsgArea { bg = "NONE", fg = color11 },                             -- Area for messages and cmdline
     MsgSeparator { bg = color0.darken(80), fg = color7 },              -- Separator for scrolled messages, `msgsep` flag of 'display'
