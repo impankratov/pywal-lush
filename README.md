@@ -1,28 +1,34 @@
-# A pywal based Lush Theme for Neovim.
+# pywal-lush
 
-===
+Dynamic Neovim theme that uses colors generated from
+[pywal](https://github.com/dylanaraps/pywal).
 
-## Introduction
+Made with [Lush](https://github.com/rktjmp/lush.nvim/tree/main).
 
-This is my first cut at a Lush based theme that utilizes the pywal mechanism
-for creating a palette based on a background. It builds a lua Table from the
-~/.cache/wal/colors and then uses the awesome Lush based primitives to modify
-the colours dynamically.
+Initial implementation based on
+[Deep-Six/pywal-lush](https://github.com/Deep-Six/pywal-lush).
 
-## Warning
+## Installation
 
-This is also my first lua based anything, your mileage may vary!
+Using `lazy.nvim`:
 
-## Install
+```lua
+{
+  "impankratov/pywal-lush",
+  dependencies = { "rktjmp/lush.nvim", }
+}
+```
 
-VimPlug `Plug 'Deep-Six/pywal-lush',{'branch': 'main'}`
+Apply via `init.lua`:
 
-## Todo
+```lua
+vim.o.termguicolors = true
+vim.cmd.colorscheme('pywal-lush')
+```
 
-I am trying to get lightline working, but with an eye to move to lualine
-instead.
+## Plugin support
 
-## More Information
-
-See: http://git.io/lush.nvim for more information on Lush and a helper script
-to setup your repo clone.
+- [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
+- [lualine.nvim](https://github.com/nvim-lualine/lualine.nvim)
+- [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)
+- [nvim-treesitter-context](https://github.com/nvim-treesitter/nvim-treesitter-context)
