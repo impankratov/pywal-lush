@@ -106,7 +106,7 @@ local theme = lush(function(injected_functions)
     DiffAdd { bg = color6, fg = color15 },                             -- diff mode: Added line |diff.txt|
     DiffChange { bg = color8, fg = color10 },                          -- diff mode: Changed line |diff.txt|
     DiffDelete { bg = color0, fg = color8.lighten(20) },               -- diff mode: Deleted line |diff.txt|
-    DiffText { DiffAdd },                                              -- diff mode: Changed text within a changed line |diff.txt|
+    DiffText { bg = color14, fg = color8 },                            -- diff mode: Changed text within a changed line |diff.txt|
     EndOfBuffer { bg = "NONE", fg = color8 },                          -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
     TermCursor { bg = color5, fg = color0 },                           -- cursor in a focused terminal
     TermCursorNC { bg = color2, fg = color0 },                         -- cursor in an unfocused terminal
@@ -325,7 +325,7 @@ local theme = lush(function(injected_functions)
     -- diffNoEOL {}, -- Constant
     -- diffCommon {}, -- Constant
     diffRemoved { DiffDelete }, -- Special
-    -- diffChanged {}, -- PreProc
+    diffChanged { DiffChange }, -- PreProc
     diffAdded { DiffAdd },      -- Identifier
     -- diffLine {}, -- Statement
     -- diffSubname {}, -- PreProc
@@ -361,6 +361,7 @@ local theme = lush(function(injected_functions)
     GitSignsAdd { DiffAdd, bg = "NONE" },
     GitSignsChange { DiffChange, bg = "NONE" },
     GitSignsDelete { DiffDelete, bg = "NONE" },
+    GitSignsAddInline { DiffText }
 
     -- LeapMatch { bg = color7, gui = 'underline' },
     -- LeapLabelPrimary {}
