@@ -361,7 +361,33 @@ local theme = lush(function(injected_functions)
     GitSignsAdd { DiffAdd, bg = "NONE" },
     GitSignsChange { DiffChange, bg = "NONE" },
     GitSignsDelete { DiffDelete, bg = "NONE" },
-    GitSignsAddInline { DiffText }
+    GitSignsAddInline { DiffText },
+
+		-- NeogitChangeModified {},
+		-- NeogitChangeAdded {},
+		-- NeogitChangeDeleted {},
+		-- NeogitChangeRenamed {},
+		-- NeogitChangeUpdated {},
+		-- NeogitChangeCopied {},
+		-- NeogitChangeBothModified {},
+		-- NeogitChangeNewFile {},
+
+		NeogitHunkHeader { Type },
+		NeogitDiffContext { Normal },
+		NeogitDiffAdd { DiffAdd, bg = "NONE" },
+		NeogitDiffDelete { DiffDelete, bg = "NONE" },
+		NeogitDiffHeader { Type },
+
+		NeogitHunkHeaderHighlight { Pmenu, gui = "bold" },
+		NeogitDiffContextHighlight { Normal, bg = color0.lighten(5) },
+		NeogitDiffAddHighlight { DiffAdd },
+		NeogitDiffDeleteHighlight { DiffDelete },
+		NeogitDiffHeaderHighlight { PmenuSel, gui = "bold" },
+
+    NeogitCursorLine { PmenuSel },
+
+		-- LeapMatch { bg = color7, gui = 'underline' },
+		-- LeapLabelPrimary {}
 
     -- LeapMatch { bg = color7, gui = 'underline' },
     -- LeapLabelPrimary {}
