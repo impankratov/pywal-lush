@@ -392,6 +392,11 @@ local theme = lush(function(injected_functions)
     -- LeapMatch { bg = color7, gui = 'underline' },
     -- LeapLabelPrimary {}
 
+    -- nvim-cmp 
+    CmpItemAbbrMatch { fg = color11 },
+    CmpItemAbbrMatchFuzzy { CmpItemAbbrMatch  },
+    CmpItemKind { fg = color9 },
+    CmpItemMenu { fg = color9 },
   }
 end)
 
