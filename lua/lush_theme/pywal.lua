@@ -354,9 +354,9 @@ local theme = lush(function(injected_functions)
     TelescopePromptPrefix { fg = color14 },  -- guifg=red
     TelescopePromptCounter { bg = "NONE", fg = color3 }, -- guifg=#ffffff
 
-    TreesitterContext { bg = color8, fg = color7 },
-    TreesitterContextLineNumber { bg = color8, fg = color1 }, -- dressing.nvim floating background
-    TreesitterContextBottom { fg = color1, gui = "underline" },
+    TreesitterContext { bg = color0 },
+    TreesitterContextLineNumber { LineNr, bg = color0 },
+    TreesitterContextBottom { fg = color7, gui = "underline,bold" },
 
     GitSignsAdd { DiffAdd, bg = "NONE" },
     GitSignsChange { DiffChange, bg = "NONE" },
