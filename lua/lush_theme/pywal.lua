@@ -332,6 +332,12 @@ local theme = lush(function(injected_functions)
     -- diffSubname {}, -- PreProc
     -- diffComment {}, -- Comment
 
+    -- nvim-cmp 
+    CmpItemAbbrMatch { fg = color15, gui = "bold" },
+    CmpItemAbbrMatchFuzzy { CmpItemAbbrMatch  },
+    CmpItemKind { fg = color9 },
+    CmpItemMenu { fg = color1 },
+
     -- Telescope
     -- https://github.com/nvim-telescope/telescope.nvim
 
@@ -349,7 +355,7 @@ local theme = lush(function(injected_functions)
     -- TelescopePreviewBorder  { }, -- guifg=#ffffff
 
     -- Highlight characters your in put matches
-    TelescopeMatching { bg = color14, fg = color0 }, -- guifg=blue
+    TelescopeMatching { CmpItemAbbrMatch }, -- guifg=blue
 
     -- Color the prompt prefix
     TelescopePromptPrefix { fg = color14 },  -- guifg=red
@@ -392,12 +398,6 @@ local theme = lush(function(injected_functions)
 
     -- LeapMatch { bg = color7, gui = 'underline' },
     -- LeapLabelPrimary {}
-
-    -- nvim-cmp 
-    CmpItemAbbrMatch { fg = color15, gui = "bold" },
-    CmpItemAbbrMatchFuzzy { CmpItemAbbrMatch  },
-    CmpItemKind { fg = color9 },
-    CmpItemMenu { fg = color1 },
   }
 end)
 
