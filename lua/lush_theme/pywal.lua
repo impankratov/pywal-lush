@@ -338,6 +338,19 @@ local theme = lush(function(injected_functions)
     CmpItemKind { fg = color9 },
     CmpItemMenu { fg = color1 },
 
+    -- Lualine
+    LualineNormalA { bg = color4, fg = color0, gui = "bold" },
+    LualineNormalB { bg = color8, fg = color15 },
+    LualineNormalC { bg = color0, fg = color7 },
+
+    LualineInactiveA { bg = color0, fg = color1 },
+    LualineInactiveB { LualineInactiveA },
+    LualineInactiveC { LualineInactiveA },
+
+    LualineInsertA { bg = color14, fg = color0, gui = "bold" },
+    LualineVisualA { Visual, gui = "bold" },
+    LualineReplaceA { bg = color11, fg = color0, gui = "bold" },
+
     -- Telescope
     -- https://github.com/nvim-telescope/telescope.nvim
 
