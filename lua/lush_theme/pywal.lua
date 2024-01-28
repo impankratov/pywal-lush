@@ -47,9 +47,10 @@ local hsl = lush.hsl
 
 local function getColors()
   local colorTable = {}
-  local home = os.getenv('HOME')
-  local pywal_colors = home .. '/.cache/wal/colors'
-  local file = io.open(pywal_colors, 'r')
+  local sep = package.config:sub(1, 1)
+  local wal_colors_path = table.concat({ os.getenv('HOME'), '.cache', 'wal', 'colors' }, sep)
+
+  local file = io.open(wal_colors_path , 'r')
   if file then
     for line in file:lines() do
       table.insert(colorTable, line)
