@@ -136,7 +136,7 @@ local theme = lush(function(injected_functions)
     Question { bg = color0, fg = color4.lighten(30) },                 -- |hit-enter| prompt and yes/no questions
     QuickFixLine { bg = color2, fg = color8 },                         -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
     Search { bg = color14, fg = color0 },                              -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
-    SpecialKey { bg = color0, fg = color7.darken(40) },                -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace|
+    SpecialKey { bg = "NONE", fg = color2, gui = "italic" },                -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace|
     SpellBad { bg = "NONE", fg = "NONE", gui = "undercurl" },          -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
     SpellCap { SpellBad },                                             -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
     SpellLocal { SpellBad },                                           -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
