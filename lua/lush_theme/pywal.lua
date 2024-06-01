@@ -353,10 +353,11 @@ local theme = lush(function(injected_functions)
 
     -- Telescope
     -- https://github.com/nvim-telescope/telescope.nvim
+    -- https://github.com/nvim-telescope/telescope.nvim/blob/master/plugin/telescope.lua
 
     TelescopeTitle          { FloatTitle },
-    TelescopeSelection      { bg = color3, fg = color0 }, -- " Selected item
-    TelescopeSelectionCaret { TelescopeSelection, fg = color11, gui = "bold" }, -- " Selection caret
+    TelescopeSelection      { PmenuSel }, -- " Selected item
+    TelescopeSelectionCaret { TelescopeSelection, fg = color15, gui = "bold" }, -- " Selection caret
     TelescopeMultiSelection { TelescopeSelectionCaret, bg = "NONE" }, -- " Multisections
     TelescopeNormal         { NormalFloat }, -- " Floating windows created by telescope
 
