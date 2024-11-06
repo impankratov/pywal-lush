@@ -368,7 +368,7 @@ local theme = lush(function(injected_functions)
     -- TelescopePreviewBorder  { }, -- guifg=#ffffff
 
     -- Highlight characters your in put matches
-    TelescopeMatching { CmpItemAbbrMatch }, -- guifg=blue
+    TelescopeMatching { CmpItemAbbrMatch, bg = color14  }, -- guifg=blue
 
     -- Color the prompt prefix
     TelescopePromptPrefix { fg = color14 },  -- guifg=red
