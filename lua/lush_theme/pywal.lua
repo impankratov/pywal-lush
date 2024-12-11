@@ -359,7 +359,7 @@ local theme = lush(function(injected_functions)
     TelescopeTitle          { FloatTitle },
     TelescopeSelection      { PmenuSel }, -- " Selected item
     TelescopeSelectionCaret { TelescopeSelection, fg = color15, gui = "bold" }, -- " Selection caret
-    TelescopeMultiSelection { TelescopeSelectionCaret, bg = "NONE", gui = "italic" }, -- " Multisections
+    TelescopeMultiSelection { TelescopeSelectionCaret, bg = "NONE", gui = "bold" }, -- " Multisections
     TelescopeNormal         { NormalFloat }, -- " Floating windows created by telescope
 
     -- Border highlight groups
@@ -369,7 +369,7 @@ local theme = lush(function(injected_functions)
     -- TelescopePreviewBorder  { }, -- guifg=#ffffff
 
     -- Highlight characters your in put matches
-    TelescopeMatching { bg = color6, fg = color0, gui = "bold" }, -- guifg=blue
+    TelescopeMatching { bg = color6, fg = color0 }, -- guifg=blue
 
     -- Color the prompt prefix
     TelescopePromptPrefix { fg = color14 },  -- guifg=red
