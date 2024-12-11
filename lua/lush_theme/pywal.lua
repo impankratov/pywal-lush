@@ -156,7 +156,7 @@ local theme = lush(function(injected_functions)
     WildMenu { PmenuSel },                                             -- current match in 'wildmenu' completion
 
     FloatTitle { NormalFloat, fg = color15, gui = "bold" },            -- nvim.dressing rename pop-up title https://github.com/stevearc/dressing.nvim/issues/42
-    FloatBorder { NormalFloat, fg = color4 },                          -- nvim.dressing rename pop-up border
+    FloatBorder { NormalFloat, fg = color2 },                          -- nvim.dressing rename pop-up border
 
     -- Common vim syntax groups used for all kinds of code and markup.
     -- Commented-out groups should chain up to their preferred (*) group
