@@ -337,7 +337,7 @@ local theme = lush(function(injected_functions)
     CmpItemAbbrMatch { fg = color15, gui = "bold" },
     CmpItemAbbrMatchFuzzy { CmpItemAbbrMatch  },
     CmpItemKind { fg = color9 },
-    CmpItemMenu { fg = color1 },
+    CmpItemMenu { fg = color1, gui = "italic" },
 
     -- Lualine
     LualineNormalA { bg = color4, fg = color0, gui = "bold" },
