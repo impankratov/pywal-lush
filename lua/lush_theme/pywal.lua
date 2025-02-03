@@ -275,7 +275,7 @@ local theme = lush(function(injected_functions)
     -- sym"@constant.macro"    { }, -- Define
     -- sym"@define"            { }, -- Define
     -- sym"@macro"             { }, -- Macro
-    -- sym"@string"            { }, -- String
+    sym"@string"            { fg = color11 }, -- String
     -- sym"@string.escape"     { }, -- SpecialChar
     -- sym"@string.special"    { }, -- SpecialChar
     -- sym"@character"         { }, -- Character
