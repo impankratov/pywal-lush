@@ -104,10 +104,10 @@ local theme = lush(function(injected_functions)
     CursorColumn { bg = "NONE", fg = color7 },                         -- Screen-column at the cursor, when 'cursorcolumn' is set.
     CursorLine { bg = color0 },                                        -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
     Directory { bg = "NONE", fg = color5 },                            -- directory names (and other special names in listings)
-    DiffAdd { bg = color6, fg = color15 },                             -- diff mode: Added line |diff.txt|
-    DiffChange { bg = color8, fg = color10 },                          -- diff mode: Changed line |diff.txt|
-    DiffDelete { bg = color0, fg = color8.lighten(20) },               -- diff mode: Deleted line |diff.txt|
-    DiffText { bg = color14, fg = color8 },                            -- diff mode: Changed text within a changed line |diff.txt|
+    DiffAdd { bg = color3, fg = color7 },                             -- diff mode: Added line |diff.txt|
+    DiffChange { bg = color2, fg = color7 },                           -- diff mode: Changed line |diff.txt|
+    DiffDelete { bg = "NONE", fg = color8 },                           -- diff mode: Deleted line |diff.txt|
+    DiffText { bg = color10, fg = color15 },                            -- diff mode: Changed text within a changed line |diff.txt|
     EndOfBuffer { bg = "NONE", fg = color8 },                          -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
     TermCursor { bg = color5, fg = color0 },                           -- cursor in a focused terminal
     TermCursorNC { bg = color2, fg = color0 },                         -- cursor in an unfocused terminal
@@ -379,9 +379,9 @@ local theme = lush(function(injected_functions)
     TreesitterContextLineNumber { LineNr, bg = color0 },
     TreesitterContextBottom { fg = color7, gui = "underline,bold" },
 
-    GitSignsAdd { DiffAdd, bg = "NONE" },
-    GitSignsChange { DiffChange, bg = "NONE" },
-    GitSignsDelete { DiffDelete, bg = "NONE" },
+    GitSignsAdd { bg = "NONE", fg = color11  },
+    GitSignsChange { bg = "NONE", fg = color10 },
+    GitSignsDelete { bg = "NONE", fg = color8  },
     GitSignsAddInline { DiffText },
 
 		-- NeogitChangeModified {},
