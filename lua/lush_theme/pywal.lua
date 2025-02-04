@@ -152,7 +152,7 @@ local theme = lush(function(injected_functions)
     VisualNOS { QuickFixLine },                                        -- Visual mode selection when vim is "Not Owning the Selection".
     WarningMsg { bg = color8, fg = color15, gui = "bold" },            -- warning messages
     Whitespace { bg = "NONE", fg = color8, ctermbg = none },           -- "nbsp", "space", "tab" and "trail" in 'listchars'
-    -- Winseparator { },                                               -- Separator between window splits. Inherts from |hl-VertSplit| by default, which it will replace eventually.
+    Winseparator { bg = "NONE", fg = color4 },                         -- Separator between window splits. Inherts from |hl-VertSplit| by default, which it will replace eventually.
     WildMenu { PmenuSel },                                             -- current match in 'wildmenu' completion
 
     FloatTitle { NormalFloat, fg = color15, gui = "bold" },            -- nvim.dressing rename pop-up title https://github.com/stevearc/dressing.nvim/issues/42
@@ -377,7 +377,7 @@ local theme = lush(function(injected_functions)
 
     TreesitterContext { bg = color0 },
     TreesitterContextLineNumber { LineNr, bg = color0 },
-    TreesitterContextBottom { fg = color7, gui = "underline,bold" },
+    TreesitterContextBottom { fg = color4, gui = "underline,bold" },
 
     GitSignsAdd { bg = "NONE", fg = color11  },
     GitSignsChange { bg = "NONE", fg = color10 },
