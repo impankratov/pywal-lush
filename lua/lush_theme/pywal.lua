@@ -96,6 +96,7 @@ local theme = lush(function(injected_functions)
     --
     -- See :h highlight-groups
     --
+    -- TODO: https://github.com/rktjmp/lush-template/commit/db76a5866a20ec53001eb46616b4eadb5a9d13b3
     ColorColumn { bg = color0 },                                       -- used for the columns set with 'colorcolumn'
     Conceal { bg = color0, fg = color1.darken(30) },                   -- placeholder characters substituted for concealed text (see 'conceallevel')
     Cursor { bg = color0, fg = color8 },                               -- character under the cursor
@@ -385,6 +386,19 @@ local theme = lush(function(injected_functions)
     GitSignsChange { bg = "NONE", fg = color10 },
     GitSignsDelete { bg = "NONE", fg = color8  },
     GitSignsAddInline { DiffText },
+
+    -- Snacks
+    SnacksNormal { Normal },
+    SnacksNormalNC { NormalNC },
+    SnacksWinBar { WinBar },
+    SnacksWinBarNC { WinBarNC },
+
+    SnacksInputNormal { NormalFloat },
+    SnacksInputBorder { FloatBorder },
+    SnacksInputTitle { FloatTitle },
+    SnacksInputIcon { SnacksInputBorder },
+
+    -- Neogit
 
 		-- NeogitChangeModified {},
 		-- NeogitChangeAdded {},
