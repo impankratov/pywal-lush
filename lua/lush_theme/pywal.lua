@@ -128,7 +128,7 @@ local theme = lush(function(injected_functions)
     NonText { bg = color0, fg = color1.darken(30), ctermbg = none },   -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
     Normal { bg = "NONE", fg = color7, ctermbg = none },               -- normal text
     NormalFloat { bg = "NONE", fg = color7 },                          -- Normal text in floating windows.
-    -- NormalNC { },                                                   -- Normal text in non-current windows
+    NormalNC { },                                                      -- Normal text in non-current windows
     Pmenu { bg = color8, fg = color7 },                                -- Popup menu: normal item.
     PmenuSel { bg = color9, fg = color0 },                             -- Popup menu: selected item.
     PmenuSbar { fg = "NONE", bg = color0 },                            -- Popup menu: scrollbar.
@@ -154,6 +154,8 @@ local theme = lush(function(injected_functions)
     Whitespace { bg = "NONE", fg = color8, ctermbg = none },           -- "nbsp", "space", "tab" and "trail" in 'listchars'
     Winseparator { bg = "NONE", fg = color4 },                         -- Separator between window splits. Inherts from |hl-VertSplit| by default, which it will replace eventually.
     WildMenu { PmenuSel },                                             -- current match in 'wildmenu' completion
+    WinBar { },                                                        -- Window bar of current window
+    WinBarNC { },                                                      -- Window bar of not-current windows
 
     FloatTitle { NormalFloat, fg = color15, gui = "bold" },            -- nvim.dressing rename pop-up title https://github.com/stevearc/dressing.nvim/issues/42
     FloatBorder { NormalFloat, fg = color2 },                          -- nvim.dressing rename pop-up border
