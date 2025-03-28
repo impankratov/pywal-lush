@@ -111,7 +111,6 @@ local theme = lush(function(injected_functions)
     DiffText { bg = color10, fg = color15 },                            -- diff mode: Changed text within a changed line |diff.txt|
     EndOfBuffer { bg = "NONE", fg = color8 },                          -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
     TermCursor { bg = color5, fg = color0 },                           -- cursor in a focused terminal
-    TermCursorNC { bg = color2, fg = color0 },                         -- cursor in an unfocused terminal
     ErrorMsg { bg = color14, fg = color0 },                            -- error messages on the command line
     VertSplit { bg = "NONE", fg = color8 },                            -- the column separating vertically split windows
     Folded { bg = color0, fg = color2.darken(30) },                    -- line used for closed folds
