@@ -113,8 +113,8 @@ local theme = lush(function(injected_functions)
     TermCursor { bg = color5, fg = color0 },                           -- cursor in a focused terminal
     ErrorMsg { bg = color14, fg = color0 },                            -- error messages on the command line
     VertSplit { bg = "NONE", fg = color8 },                            -- the column separating vertically split windows
-    Folded { bg = color0, fg = color2.darken(30) },                    -- line used for closed folds
-    FoldColumn { bg = color1, fg = color0 },                           -- 'foldcolumn'
+    Folded { bg = color0, fg = color2 },                               -- line used for closed folds
+    FoldColumn { bg = "NONE", fg = color2 },                           -- 'foldcolumn'
     SignColumn { bg = "NONE", fg = color5 },                           -- column where |signs| are displayed
     IncSearch { bg = color7, fg = color0 },                            -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
     Substitute { bg = color6, fg = color0 },                           -- |:substitute| replacement text highlighting
