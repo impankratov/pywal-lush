@@ -105,10 +105,10 @@ local theme = lush(function(injected_functions)
     CursorColumn { bg = "NONE", fg = color7 },                         -- Screen-column at the cursor, when 'cursorcolumn' is set.
     CursorLine { bg = color0 },                                        -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
     Directory { bg = "NONE", fg = color5 },                            -- directory names (and other special names in listings)
-    DiffAdd { bg = color3, fg = color15 },                             -- diff mode: Added line |diff.txt|
-    DiffChange { bg = color2, fg = color7 },                           -- diff mode: Changed line |diff.txt|
+    DiffAdd { bg = color11, fg = color0 },                             -- diff mode: Added line |diff.txt|
+    DiffChange { bg = color3, fg = color15 },                          -- diff mode: Changed line |diff.txt|
     DiffDelete { bg = color0, fg = color1 },                           -- diff mode: Deleted line |diff.txt|
-    DiffText { bg = color10, fg = color15 },                            -- diff mode: Changed text within a changed line |diff.txt|
+    DiffText { bg = color11, fg = color0 },                            -- diff mode: Changed text within a changed line |diff.txt|
     EndOfBuffer { bg = "NONE", fg = color8 },                          -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
     TermCursor { bg = color5, fg = color0 },                           -- cursor in a focused terminal
     ErrorMsg { bg = color14, fg = color0 },                            -- error messages on the command line
@@ -381,10 +381,22 @@ local theme = lush(function(injected_functions)
     TreesitterContextLineNumber { LineNr, bg = color0 },
     TreesitterContextBottom { fg = color4, gui = "underline,bold" },
 
-    GitSignsAdd { bg = "NONE", fg = color11  },
-    GitSignsChange { bg = "NONE", fg = color10 },
-    GitSignsDelete { bg = "NONE", fg = color1  },
-    GitSignsAddInline { DiffText },
+    GitSignsAdd { bg = "NONE", fg = color11 },
+    GitSignsChange { bg = "NONE", fg = color2 },
+    GitSignsDelete { bg = "NONE", fg = color1 },
+
+    GitSignsAddPreview { DiffChange },                          -- Used for added lines in previews.
+    GitSignsDeletePreview { DiffDelete },                       -- Used for deleted lines in previews.
+    GitSignsCurrentLineBlame { NonText },                       -- Used for current line blame.
+    GitSignsAddInline { DiffAdd },                              -- Used for added word diff regions in inline previews.
+    GitSignsDeleteInline { bg = color8, fg = color7 },          -- Used for deleted word diff regions in inline previews.
+    GitSignsChangeInline { GitSignsDeleteInline },              -- Used for changed word diff regions in inline previews.
+    GitSignsAddLnInline { GitSignsAddInline },                  -- Used for added word diff regions when `config.word_diff == true`.
+    GitSignsChangeLnInline { GitSignsChangeInline },            -- Used for changed word diff regions when `config.word_diff == true`.
+    GitSignsDeleteLnInline { GitSignsDeleteInline },            -- Used for deleted word diff regions when `config.word_diff == true`.
+    GitSignsDeleteVirtLn { DiffDelete },                        -- Used for deleted lines shown by inline `preview_hunk_inline()` or `show_deleted()`.
+    GitSignsDeleteVirtLnInLine { GitSignsDeleteLnInline },      -- Used for word diff regions in lines shown by inline `preview_hunk_inline()` or `show_deleted()`.
+    GitSignsVirtLnum { GitSignsDeleteVirtLn },                  -- Used for line numbers in inline hunks previews.
 
     -- Snacks
     SnacksNormal { Normal },
