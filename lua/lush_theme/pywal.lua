@@ -107,7 +107,7 @@ local theme = lush(function(injected_functions)
     Directory { bg = "NONE", fg = color5 },                            -- directory names (and other special names in listings)
     DiffAdd { bg = color3, fg = color15 },                             -- diff mode: Added line |diff.txt|
     DiffChange { bg = color2, fg = color7 },                           -- diff mode: Changed line |diff.txt|
-    DiffDelete { bg = color0, fg = color2 },                           -- diff mode: Deleted line |diff.txt|
+    DiffDelete { bg = color0, fg = color1 },                           -- diff mode: Deleted line |diff.txt|
     DiffText { bg = color10, fg = color15 },                            -- diff mode: Changed text within a changed line |diff.txt|
     EndOfBuffer { bg = "NONE", fg = color8 },                          -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
     TermCursor { bg = color5, fg = color0 },                           -- cursor in a focused terminal
@@ -328,9 +328,9 @@ local theme = lush(function(injected_functions)
     -- diffIsA {}, -- Constant
     -- diffNoEOL {}, -- Constant
     -- diffCommon {}, -- Constant
-    diffRemoved { DiffDelete }, -- Special
-    diffChanged { DiffChange }, -- PreProc
-    diffAdded { DiffAdd },      -- Identifier
+    diffRemoved { fg = color1 }, -- Special
+    diffChanged { fg = color10 }, -- PreProc
+    diffAdded { fg = color11 },      -- Identifier
     -- diffLine {}, -- Statement
     -- diffSubname {}, -- PreProc
     -- diffComment {}, -- Comment
@@ -383,7 +383,7 @@ local theme = lush(function(injected_functions)
 
     GitSignsAdd { bg = "NONE", fg = color11  },
     GitSignsChange { bg = "NONE", fg = color10 },
-    GitSignsDelete { bg = "NONE", fg = color8  },
+    GitSignsDelete { bg = "NONE", fg = color1  },
     GitSignsAddInline { DiffText },
 
     -- Snacks
