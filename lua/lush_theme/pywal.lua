@@ -382,7 +382,7 @@ local theme = lush(function(injected_functions)
     TreesitterContextBottom { fg = color4, gui = "underline,bold" },
 
     GitSignsAdd { bg = "NONE", fg = color11 },
-    GitSignsChange { bg = "NONE", fg = color2 },
+    GitSignsChange { bg = "NONE", fg = color3 },
     GitSignsDelete { bg = "NONE", fg = color1 },
 
     GitSignsAddPreview { DiffChange },                          -- Used for added lines in previews.
