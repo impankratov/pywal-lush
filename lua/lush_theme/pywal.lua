@@ -341,6 +341,28 @@ local theme = lush(function(injected_functions)
     CmpItemKind { fg = color9 },
     CmpItemMenu { fg = color1, gui = "italic" },
 
+    -- blink.cmp
+    -- BlinkCmpMenu {},
+    -- BlinkCmpMenuBorder {},
+    -- BlinkCmpMenuSelection {},
+    -- BlinkCmpScrollBarThumb {},
+    -- BlinkCmpScrollBarGutter {},
+    -- BlinkCmpLabel {},
+    BlinkCmpLabelDeprecated { gui ="strikethrough" },
+    BlinkCmpLabelMatch {CmpItemAbbrMatch },
+    BlinkCmpLabelDetail { CmpItemKind },
+    BlinkCmpLabelDescription { CmpItemKind  },
+    BlinkCmpKind { Normal },
+    BlinkCmpSource { CmpItemMenu },
+    -- BlinkCmpGhostText {},
+    -- BlinkCmpDoc {},
+    -- BlinkCmpDocBorder {},
+    -- BlinkCmpDocSeparator {},
+    -- BlinkCmpDocCursorLine {},
+    -- BlinkCmpSignatureHelp {},
+    -- BlinkCmpSignatureHelpBorder {},
+    -- BlinkCmpSignatureHelpActiveParameter {},
+
     -- Lualine
     LualineNormalA { bg = color4, fg = color0, gui = "bold" },
     LualineNormalB { bg = color8, fg = color15 },
