@@ -137,6 +137,7 @@ local theme = lush(function(injected_functions)
     QuickFixLine { bg = color2, fg = color8 },                         -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
     Search { bg = color6, fg = color0 },                              -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
     CurSearch { bg = color14, fg = color0 },                           -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
+    SnippetTabStop { bg = color0, fg = color15 },                      -- Tabstops in snippets
     SpecialKey { bg = "NONE", fg = color2, gui = "italic" },                -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace|
     SpellBad { bg = "NONE", fg = "NONE", gui = "undercurl" },          -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
     SpellCap { SpellBad },                                             -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
