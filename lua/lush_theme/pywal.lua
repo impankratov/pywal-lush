@@ -153,7 +153,7 @@ local theme = lush(function(injected_functions)
     VisualNOS { QuickFixLine },                                        -- Visual mode selection when vim is "Not Owning the Selection".
     WarningMsg { bg = color8, fg = color15, gui = "bold" },            -- warning messages
     Whitespace { bg = "NONE", fg = color8, ctermbg = none },           -- "nbsp", "space", "tab" and "trail" in 'listchars'
-    Winseparator { bg = "NONE", fg = color4 },                         -- Separator between window splits. Inherts from |hl-VertSplit| by default, which it will replace eventually.
+    Winseparator { bg = "NONE", fg = color8 },                         -- Separator between window splits. Inherts from |hl-VertSplit| by default, which it will replace eventually.
     WildMenu { PmenuSel },                                             -- current match in 'wildmenu' completion
     WinBar { },                                                        -- Window bar of current window
     WinBarNC { },                                                      -- Window bar of not-current windows
