@@ -490,6 +490,95 @@ local theme = lush(function(injected_functions)
     MCPHubError {},
     MCPHubErrorFill {},
 
+    -- @markup.heading.1.markdown (H1 icons)
+    -- RenderMarkdownH1 {},
+    -- @markup.heading.2.markdown (H2 icons)
+    -- RenderMarkdownH2 {},
+    -- @markup.heading.3.markdown (H3 icons)
+    -- RenderMarkdownH3 {},
+    -- @markup.heading.4.markdown (H4 icons)
+    -- RenderMarkdownH4 {},
+    -- @markup.heading.5.markdown (H5 icons)
+    -- RenderMarkdownH5 {},
+    -- @markup.heading.6.markdown (H6 icons)
+    -- RenderMarkdownH6 {},
+    -- DiffText (H1 background line)
+    -- RenderMarkdownH1Bg {},
+    -- DiffAdd (H2 background line)
+    -- RenderMarkdownH2Bg {},
+    -- DiffChange (H3 background line)
+    -- RenderMarkdownH3Bg {},
+    -- DiffDelete (H4 background line)
+    -- RenderMarkdownH4Bg {},
+    -- Visual (H5 background line)
+    -- RenderMarkdownH5Bg {},
+    -- CursorColumn (H6 background line)
+    -- RenderMarkdownH6Bg {},
+    -- ColorColumn (Code block background)
+    RenderMarkdownCode { ColorColumn, bg = "NONE" },
+    -- @label (Code info, after language)
+    RenderMarkdownCodeInfo { RenderMarkdownCode },
+    -- RenderMarkdownCode (Code border background)
+    -- RenderMarkdownCodeBorder {},
+    -- Normal (Fallback for code language)
+    -- RenderMarkdownCodeFallback {},
+    -- RenderMarkdownCode (Inline code background)
+    -- RenderMarkdownCodeInline {},
+    -- @markup.quote (Default for block quote)
+    -- RenderMarkdownQuote {},
+    -- RenderMarkdownQuote (Level 1 block quote marker)
+    -- RenderMarkdownQuote1 {},
+    -- RenderMarkdownQuote (Level 2 block quote marker)
+    -- RenderMarkdownQuote2 {},
+    -- RenderMarkdownQuote (Level 3 block quote marker)
+    -- RenderMarkdownQuote3 {},
+    -- RenderMarkdownQuote (Level 4 block quote marker)
+    -- RenderMarkdownQuote4 {},
+    -- RenderMarkdownQuote (Level 5 block quote marker)
+    -- RenderMarkdownQuote5 {},
+    -- RenderMarkdownQuote (Level 6 block quote marker)
+    -- RenderMarkdownQuote6 {},
+    -- RenderMarkdownCodeInline (Inline highlights contents)
+    -- RenderMarkdownInlineHighlight {},
+    -- Normal (List item bullet points)
+    -- RenderMarkdownBullet {},
+    -- LineNr (Thematic break line)
+    -- RenderMarkdownDash {},
+    -- SignColumn (Sign column background)
+    -- RenderMarkdownSign {},
+    -- @markup.math (Latex lines)
+    -- RenderMarkdownMath {},
+    -- Whitespace (Indent icon)
+    -- RenderMarkdownIndent {},
+    -- @comment (HTML comment inline text)
+    -- RenderMarkdownHtmlComment {},
+    -- @markup.link.label.markdown_inline (
+    -- RenderMarkdownLink {},
+    -- RenderMarkdownLink (WikiLink icon & text)
+    -- RenderMarkdownWikiLink {},
+    -- @markup.list.unchecked (Unchecked checkbox)
+    -- RenderMarkdownUnchecked {},
+    -- @markup.list.checked (Checked checkbox)
+    -- RenderMarkdownChecked {},
+    -- @markup.raw (Todo custom checkbox)
+    -- RenderMarkdownTodo {},
+    -- @markup.heading (Pipe table heading rows)
+    -- RenderMarkdownTableHead {},
+    -- Normal (Pipe table body rows)
+    -- RenderMarkdownTableRow {},
+    -- Conceal (Pipe table inline padding)
+    -- RenderMarkdownTableFill {},
+    -- DiagnosticOk (Success related callouts)
+    -- RenderMarkdownSuccess {},
+    -- DiagnosticInfo (Info related callouts)
+    -- RenderMarkdownInfo {},
+    -- DiagnosticHint (Hint related callouts)
+    -- RenderMarkdownHint {},
+    -- DiagnosticWarn (Warning related callouts)
+    -- RenderMarkdownWarn {},
+    -- DiagnosticError (Error related callouts)
+    -- RenderMarkdownError {},
+
     -- LeapMatch { bg = color7, gui = 'underline' },
     -- LeapLabelPrimary {}
   }
