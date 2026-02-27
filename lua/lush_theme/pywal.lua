@@ -120,11 +120,11 @@ local theme = lush(function(injected_functions)
     Substitute { bg = color6, fg = color0 },                           -- |:substitute| replacement text highlighting
     LineNr { bg = "NONE", fg = color3 },                               -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
     CursorLineNr { bg = color8, fg = color11, gui = "bold" },          -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
-    MatchParen { bg = color8, fg = color9, gui = "bold" },            -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
+    MatchParen { bg = color8, fg = color9, gui = "bold" },             -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
     ModeMsg { bg = color14, fg = color0 },                             -- 'showmode' message (e.g., "-- INSERT -- ")
-    MsgArea { bg = "NONE", fg = color14 },                             -- Area for messages and cmdline
+    MsgArea { bg = "NONE", fg = color6 },                              -- Area for messages and cmdline
     MsgSeparator { bg = color0, fg = color7 },                         -- Separator for scrolled messages, `msgsep` flag of 'display'
-    MoreMsg { bg = color0, fg = color6, gui = "italic" },              -- |more-prompt|
+    MoreMsg { bg = "NONE", fg = color12, gui = "italic" },             -- |more-prompt|
     NonText { bg = color0, fg = color1.darken(30), ctermbg = none },   -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
     Normal { bg = "NONE", fg = color7, ctermbg = none },               -- normal text
     NormalFloat { bg = "NONE", fg = color7 },                          -- Normal text in floating windows.
@@ -133,9 +133,9 @@ local theme = lush(function(injected_functions)
     PmenuSel { bg = color9, fg = color0 },                             -- Popup menu: selected item.
     PmenuSbar { fg = "NONE", bg = color0 },                            -- Popup menu: scrollbar.
     PmenuThumb { bg = color1, fg = "NONE" },                           -- Popup menu: Thumb of the scrollbar.
-    Question { bg = color0, fg = color4.lighten(30) },                 -- |hit-enter| prompt and yes/no questions
+    Question { bg = "NONE", fg = color14, gui = "bold" },              -- |hit-enter| prompt and yes/no questions
     QuickFixLine { bg = color2, fg = color8 },                         -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
-    Search { bg = color6, fg = color0 },                              -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
+    Search { bg = color6, fg = color0 },                               -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
     CurSearch { bg = color14, fg = color0 },                           -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
     SnippetTabStop { bg = color0, fg = color15 },                      -- Tabstops in snippets
     SpecialKey { bg = "NONE", fg = color2, gui = "italic" },                -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace|
@@ -151,7 +151,7 @@ local theme = lush(function(injected_functions)
     Title { bg = "NONE", fg = color15 },                               -- titles for output from ":set all", ":autocmd" etc.
     Visual { bg = color9, fg = color0 },                               -- Visual mode selection
     VisualNOS { QuickFixLine },                                        -- Visual mode selection when vim is "Not Owning the Selection".
-    WarningMsg { bg = color8, fg = color15, gui = "bold" },            -- warning messages
+    WarningMsg { bg = "NONE", fg = color15, gui = "bold" },            -- warning messages
     Whitespace { bg = "NONE", fg = color8, ctermbg = none },           -- "nbsp", "space", "tab" and "trail" in 'listchars'
     Winseparator { bg = "NONE", fg = color8 },                         -- Separator between window splits. Inherts from |hl-VertSplit| by default, which it will replace eventually.
     WildMenu { PmenuSel },                                             -- current match in 'wildmenu' completion
