@@ -98,7 +98,7 @@ local theme = lush(function(injected_functions)
     --
     -- TODO: https://github.com/rktjmp/lush-template/commit/db76a5866a20ec53001eb46616b4eadb5a9d13b3
     ColorColumn { bg = color0 },                                       -- used for the columns set with 'colorcolumn'
-    Conceal { bg = color0, fg = color1.darken(30) },                   -- placeholder characters substituted for concealed text (see 'conceallevel')
+    Conceal { bg = "NONE", fg = color1 },                              -- placeholder characters substituted for concealed text (see 'conceallevel')
     Cursor { bg = color0, fg = color8 },                               -- character under the cursor
     lCursor { bg = color2, fg = color15 },                             -- the character under the cursor when |language-mapping| is used (see 'guicursor')
     CursorIM { bg = color5, fg = color0 },                             -- like Cursor, but used when in IME mode |CursorIM|
