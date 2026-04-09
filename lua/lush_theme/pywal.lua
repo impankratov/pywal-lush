@@ -105,10 +105,11 @@ local theme = lush(function(injected_functions)
     CursorColumn { bg = "NONE", fg = color7 },                         -- Screen-column at the cursor, when 'cursorcolumn' is set.
     CursorLine { bg = color0 },                                        -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
     Directory { bg = "NONE", fg = color5 },                            -- directory names (and other special names in listings)
-    DiffAdd { bg = color11, fg = color0 },                             -- diff mode: Added line |diff.txt|
-    DiffChange { bg = color3, fg = color15 },                          -- diff mode: Changed line |diff.txt|
-    DiffDelete { bg = color0, fg = color1 },                           -- diff mode: Deleted line |diff.txt|
-    DiffText { bg = color11, fg = color0 },                            -- diff mode: Changed text within a changed line |diff.txt|
+    DiffAdd { bg = color3, fg = color15 },                             -- diff mode: Added line |diff.txt|
+    DiffChange { bg = color3.mix(color0, 50), fg = color7 },           -- diff mode: Changed line |diff.txt|
+    DiffDelete { bg = "NONE", fg = color2 },                           -- diff mode: Deleted line |diff.txt|
+    DiffText { DiffAdd },                                              -- diff mode: Changed text within a changed line |diff.txt|
+    DiffTextAdd { DiffAdd },                                           -- diff mode: Added text within a changed line |diff.txt|
     EndOfBuffer { bg = "NONE", fg = color8 },                          -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
     TermCursor { bg = color5, fg = color0 },                           -- cursor in a focused terminal
     ErrorMsg { bg = color14, fg = color0 },                            -- error messages on the command line
